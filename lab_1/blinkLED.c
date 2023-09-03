@@ -4,6 +4,7 @@
 #include<unistd.h>
 
 #define GPIO_SYSFS "/sys/class/gpio/"
+#define GPIO_FILE = "/sys/class/gpio/gpio"
 
 void writeGPIO(char filename[], char value[]){
    FILE* fp;                           // create a file pointer fp
@@ -19,7 +20,6 @@ int main(int argc, char* argv[]){
    }
 
     int nb_blink;
-    char* GPIO_FILE = "/sys/class/gpio/gpio";
 
     printf("Starting the blink LED program\n");
 
