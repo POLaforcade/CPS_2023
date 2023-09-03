@@ -25,15 +25,15 @@ int main(int argc, char* argv[]){
    sscanf(argv[2], "%d", &nb_gpio);
    sscanf(argv[3], "%d", &nb_blink);
 
-   printf("Starting the blink LED program %d times on GPIO %d\n", nb_blink, nb_gpio);
+   printf("Starting the blink LED program %d times on GPIO %s\n", nb_blink, argv[2]);
 
    // Setup the path to the correct GPIO
-   strcat(GPIO_FILE, nb_gpio);
+   strcat(GPIO_FILE, argv[2]);
    strcat(GPIO_FILE, "/");
 
    // setup GPIO pin
    printf("Setting up the LED on the GPIO\n");
-   writeGPIO(GPIO_SYSFS "export", nb_gpio);
+   writeGPIO(GPIO_SYSFS "export", argv[2]);
    usleep(100000);
    writeGPIO(GPIO_FILE "direction", "out");
 
