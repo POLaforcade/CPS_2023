@@ -21,7 +21,7 @@
 
 void writeGPIO(char filename[], char value[]){
    FILE* fp;                           // create a file pointer fp
-   fp = fopen(filename, "w+");         // open file for writing
+   fp = fopen(filename, "w");         // open file for writing
    fprintf(fp, "%s", value);           // send the value to the file
    fclose(fp);                         // close the file using fp
 }
