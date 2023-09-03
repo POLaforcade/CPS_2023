@@ -19,7 +19,7 @@ int main(int argc, char* argv[]){
    }
 
     int nb_blink;
-    char* GPIO_FILE = "/sys/class/gpio/gpio"
+    char* GPIO_FILE = "/sys/class/gpio/gpio";
 
     printf("Starting the blink LED program\n");
 
