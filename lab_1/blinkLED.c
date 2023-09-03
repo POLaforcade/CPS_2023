@@ -4,7 +4,7 @@
 #include<unistd.h>
 
 #define GPIO_SYSFS "/sys/class/gpio/"
-#define GPIO_FILE = "/sys/class/gpio/gpio"
+#define GPIO_FILE "/sys/class/gpio/gpio"
 
 void writeGPIO(char filename[], char value[]){
    FILE* fp;                           // create a file pointer fp
