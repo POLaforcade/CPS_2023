@@ -6,7 +6,8 @@
 #define GPIO_SYSFS "/sys/class/gpio/"
 #define GPIO_FILE "/sys/class/gpio/gpio"
 
-void writeGPIO(char filename[], char value[]){
+void writeGPIO(char filename[], char value[])
+{
    FILE* fp;                           // create a file pointer fp
    fp = fopen(filename, "w");         // open file for writing
    fprintf(fp, "%s", value);           // send the value to the file
@@ -14,11 +15,12 @@ void writeGPIO(char filename[], char value[]){
 }
 
 int main(int argc, char* argv[]){
-   if(argc!=3){ // We should have 3 args to run the program : program_name GPIO_pin nb_blink
+   if(argc!=3)// We should have 3 args to run the program : program_name GPIO_pin nb_blink
+   { 
       printf("Please choose [1] : GPIO Pin, [2] : number of time LED should blink");
       return 2;
    }
-   
+
    int nb_gpio;
    int nb_blink;
 
@@ -38,7 +40,8 @@ int main(int argc, char* argv[]){
    writeGPIO(GPIO_FILE "direction", "out");
 
    // blink
-   for(int i=0; i<nb_blink; i++){
+   for(int i=0; i<nb_blink; i++)
+   {
       writeGPIO(GPIO_FILE "value", "1");
       usleep(1000000);
       writeGPIO(GPIO_FILE "value", "0");
