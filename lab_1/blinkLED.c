@@ -32,7 +32,7 @@ int main(int argc, char* argv[]){
    // setup GPIO pin
    writeGPIO(GPIO_SYSFS "export", argv[1]);
    usleep(100000);
-   printf("test")
+   printf("test");
 
    char GPIO_DIR[100] = GPIO_PATH;
    strcat(GPIO_DIR, "direction");
