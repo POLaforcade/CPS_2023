@@ -22,7 +22,7 @@ int main(int argc, char* argv[]){
       return 1;
    }
 
-   printf("%s", argv[0]);
+   printf("%s", argv[1]);
 
    int nb_gpio = atoi(argv[1]);
    int nb_blink = atoi(argv[2]);
