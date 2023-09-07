@@ -30,8 +30,8 @@ int main(int argc, char* argv[]){
    strcat(GPIO_FILE, argv[1]);
    strcat(GPIO_FILE, "/");
 
-   printf("%s\n", GPIO_FILE);
-
+   printf(GPIO_SYSFS "export");
+   printf(GPIO_NUMBER);
    // setup GPIO pin
    writeGPIO(GPIO_SYSFS "export", GPIO_NUMBER);
    usleep(100000);
