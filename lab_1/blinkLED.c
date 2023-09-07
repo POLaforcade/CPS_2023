@@ -23,7 +23,7 @@ int main(int argc, char* argv[]){
    }
 
    int nb_gpio = atoi(argv[1]);
-   int nb_blink; = atoi(argv[2])
+   int nb_blink = atoi(argv[2]);
    char* str_gpio;
    sprintf(str_gpio, "%d/", nb_gpio);
 
