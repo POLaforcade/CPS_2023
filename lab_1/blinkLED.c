@@ -30,20 +30,22 @@ int main(int argc, char* argv[]){
    strcat(GPIO_FILE, "/");
    printf("%s\n", GPIO_FILE);
 
-   // // setup GPIO pin
-   // printf("Setting up the LED on the GPIO\n");
-   // writeGPIO(GPIO_SYSFS "export", str_gpio);
-   // usleep(100000);
-   // writeGPIO(GPIO_FILE "direction", "out");
-   // // blink
-   // for(int i=0; i<nb_blink; i++)
-   // {
-   //    writeGPIO(GPIO_FILE "value", "1");
-   //    usleep(500000);
-   //    writeGPIO(GPIO_FILE "value", "0");
-   //    usleep(500000);
-   // }
-   // // unexport GPIO pin
-   // writeGPIO(GPIO_SYSFS "unexport", str_gpio);
+   // setup GPIO pin
+   printf("Setting up the LED on the GPIO\n");
+   writeGPIO(GPIO_SYSFS "export", str_gpio);
+   usleep(100000);
+   writeGPIO(GPIO_FILE "direction", "out");
+
+   // blink
+   for(int i=0; i<nb_blink; i++)
+   {
+      writeGPIO(GPIO_FILE "value", "1");
+      usleep(500000);
+      writeGPIO(GPIO_FILE "value", "0");
+      usleep(500000);
+   }
+   
+   // unexport GPIO pin
+   writeGPIO(GPIO_SYSFS "unexport", str_gpio);
    return 0;
 }
