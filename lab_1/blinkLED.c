@@ -32,7 +32,7 @@ int main(int argc, char* argv[]){
 
    // setup GPIO pin
    printf("Setting up the LED on the GPIO\n");
-   writeGPIO(GPIO_SYSFS "export", str_gpio);
+   writeGPIO(GPIO_SYSFS "export", argv[1]);
    usleep(100000);
    writeGPIO(GPIO_FILE "direction", "out");
 
@@ -44,8 +44,8 @@ int main(int argc, char* argv[]){
       writeGPIO(GPIO_FILE "value", "0");
       usleep(500000);
    }
-   
+
    // unexport GPIO pin
-   writeGPIO(GPIO_SYSFS "unexport", str_gpio);
+   writeGPIO(GPIO_SYSFS "unexport", argv[1]);
    return 0;
 }
