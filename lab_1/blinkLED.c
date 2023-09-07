@@ -3,6 +3,7 @@
 #include <string.h>
 #include <unistd.h>
 
+#define GPIO_NUMBER "4"
 #define GPIO_SYSFS "/sys/class/gpio/"
 #define GPIO_PATH "/sys/class/gpio/gpio"
 
@@ -30,7 +31,7 @@ int main(int argc, char* argv[]){
    strcat(GPIO_FILE, "/");
 
    // setup GPIO pin
-   writeGPIO(GPIO_SYSFS "export", "4");
+   writeGPIO(GPIO_SYSFS "export", GPIO_NUMBER);
    usleep(100000);
    printf("test");
 
@@ -51,6 +52,6 @@ int main(int argc, char* argv[]){
    }
 
    // unexport GPIO pin
-   writeGPIO(GPIO_SYSFS "unexport", "4");
+   writeGPIO(GPIO_SYSFS "unexport", GPIO_NUMBER);
    return 0;
 }
