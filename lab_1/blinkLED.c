@@ -22,6 +22,7 @@ int main(int argc, char* argv[]){
       return 1;
    }
 
+   printf("test");
    printf("%s", argv[1]);
 
    int nb_gpio = atoi(argv[1]);
