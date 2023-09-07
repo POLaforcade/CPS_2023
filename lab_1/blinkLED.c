@@ -43,4 +43,5 @@ int main(int argc, char* argv[]){
    // }
    // // unexport GPIO pin
    // writeGPIO(GPIO_SYSFS "unexport", str_gpio);
+   return 0;
 }
