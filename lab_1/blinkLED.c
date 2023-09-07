@@ -30,10 +30,10 @@ int main(int argc, char* argv[]){
    strcat(GPIO_FILE, argv[1]);
    strcat(GPIO_FILE, "/");
 
-   printf(GPIO_SYSFS "export");
-   printf(GPIO_NUMBER);
    // setup GPIO pin
-   writeGPIO(GPIO_SYSFS "export", GPIO_NUMBER);
+   char GPIO_EXP[100] = GPIO_SYSFS;
+   strcat(GPIO_EXP, "export");
+   writeGPIO(GPIO_EXP,argv[1]);
    usleep(100000);
 
    char GPIO_DIR[100] = GPIO_PATH;
@@ -53,6 +53,6 @@ int main(int argc, char* argv[]){
    }
 
    // unexport GPIO pin
-   writeGPIO(GPIO_SYSFS "unexport", GPIO_NUMBER);
+   writeGPIO(GPIO_SYSFS "unexport", argv[1]);
    return 0;
 }
