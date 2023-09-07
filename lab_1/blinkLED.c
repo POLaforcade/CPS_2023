@@ -16,41 +16,40 @@ void writeGPIO(char filename[], char value[])
 
 int main(int argc, char* argv[]){
 
-   printf("Recuperation des parametres");
+   printf("Recuperation des parametre\n");
 
-   int nb_gpio;
-   int nb_blink;
+   int nb_gpio, nb_blink;
+   char* str_gpio;
 
    if(argc!=3)// We should have 3 args to run the program : program_name GPIO_pin nb_blink
    { 
-      printf("Please choose [1] : GPIO Pin, [2] : number of time LED should blink");
+      printf("Please choose [1] : GPIO Pin, [2] : number of time LED should blink\n");
       return 2;
    }
 
-   // sscanf(argv[2], "%d", &nb_gpio);
-   // sscanf(argv[3], "%d", &nb_blink);
+   sscanf(argv, "%*s %d %d", &nb_gpio, &nb_blink);
+   sprintf(str_gpio, "%d/", nb_gpio);
 
-   // printf("Starting the blink LED program %d times on GPIO %s\n", nb_blink, argv[2]);
+   printf("Starting the blink LED program %d times on GPIO %d\n", nb_blink, nb_gpio);
 
-   // // Setup the path to the correct GPIO
-   // strcat(GPIO_FILE, argv[2]);
-   // strcat(GPIO_FILE, "/");
+   // Setup the path to the correct GPIO
+   strcat(GPIO_FILE, str_gpio);
 
-   // // setup GPIO pin
-   // printf("Setting up the LED on the GPIO\n");
-   // writeGPIO(GPIO_SYSFS "export", argv[2]);
-   // usleep(100000);
-   // writeGPIO(GPIO_FILE "direction", "out");
+   // setup GPIO pin
+   printf("Setting up the LED on the GPIO\n");
+   writeGPIO(GPIO_SYSFS "export", argv[2]);
+   usleep(100000);
+   writeGPIO(GPIO_FILE "direction", "out");
 
-   // // blink
-   // for(int i=0; i<nb_blink; i++)
-   // {
-   //    writeGPIO(GPIO_FILE "value", "1");
-   //    usleep(1000000);
-   //    writeGPIO(GPIO_FILE "value", "0");
-   //    usleep(1000000);
-   // }
+   // blink
+   for(int i=0; i<nb_blink; i++)
+   {
+      writeGPIO(GPIO_FILE "value", "1");
+      usleep(500000);
+      writeGPIO(GPIO_FILE "value", "0");
+      usleep(500000);
+   }
 
-   // // unexport GPIO pin
-   // writeGPIO(GPIO_SYSFS "unexport", argv[2]);
+   // unexport GPIO pin
+   writeGPIO(GPIO_SYSFS "unexport", argv[2]);
 }
