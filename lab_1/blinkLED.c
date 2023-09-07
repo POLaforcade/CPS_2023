@@ -10,8 +10,12 @@
 void writeGPIO(char filename[], char value[])
 {
    FILE* fp;                           // create a file pointer fp
-   fp = fopen(filename, "w+");          // open file for writing
-   printf("ecriture de la valeur : %s, dans le fichier : %s\n", value, filename);
+   fp = fopen(filename, "w");          // open file for writing
+   if(fp == NULL){
+      perror("Error while opening the file");
+      return 1;
+   }
+   printf("writing the value : %s, in the file : %s\n", value, filename);
    fprintf(fp, "%s", value);           // send the value to the file
    fclose(fp);                         // close the file using fp
 }
