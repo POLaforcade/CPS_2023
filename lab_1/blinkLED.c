@@ -9,7 +9,7 @@
 
 void writeGPIO(char filename[], char value[])
 {
-   printf("ecriture dans le fichier : %s\n", filename);
+   printf("ecriture de la valeur : %s, dans le fichier : %s\n", value, filename);
    FILE* fp;                           // create a file pointer fp
    fp = fopen(filename, "w");          // open file for writing
    fprintf(fp, "%s", value);           // send the value to the file
