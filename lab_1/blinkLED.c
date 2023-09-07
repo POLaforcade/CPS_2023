@@ -19,7 +19,7 @@ int main(int argc, char* argv[]){
    if(argc!=3)// We should have 3 args to run the program : program_name GPIO_pin nb_blink
    { 
       printf("Please choose [1] : GPIO Pin, [2] : number of time LED should blink\n");
-      return 1;
+      return 2;
    }
 
    printf("test");
