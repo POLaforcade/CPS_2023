@@ -13,7 +13,7 @@ void writeGPIO(char filename[], char value[])
    fp = fopen(filename, "w");          // open file for writing
    if(fp == NULL){
       perror("Error while opening the file");
-      return 1;
+      exit(0);
    }
    printf("writing the value : %s, in the file : %s\n", value, filename);
    fprintf(fp, "%s", value);           // send the value to the file
