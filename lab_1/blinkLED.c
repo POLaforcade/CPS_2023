@@ -19,7 +19,7 @@ int main(int argc, char* argv[]){
       return 2;
    }
 
-   char* GPIO_FILE;
+   char* GPIO_FILE = "/sys/class/gpio/gpio";
 
    int nb_gpio = atoi(argv[1]);
    int nb_blink = atoi(argv[2]);
