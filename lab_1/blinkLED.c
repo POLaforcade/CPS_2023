@@ -16,18 +16,15 @@ void writeGPIO(char filename[], char value[])
 
 int main(int argc, char* argv[]){
 
-   printf("Recuperation des parametre\n");
-
-   int nb_gpio, nb_blink;
-   char* str_gpio;
-
    if(argc!=3)// We should have 3 args to run the program : program_name GPIO_pin nb_blink
    { 
       printf("Please choose [1] : GPIO Pin, [2] : number of time LED should blink\n");
       return 2;
    }
 
-   sscanf(argv, "%*s %d %d", &nb_gpio, &nb_blink);
+   int nb_gpio = atoi(argv[1]);
+   int nb_blink; = atoi(argv[2])
+   char* str_gpio;
    sprintf(str_gpio, "%d/", nb_gpio);
 
    printf("Starting the blink LED program %d times on GPIO %d\n", nb_blink, nb_gpio);
