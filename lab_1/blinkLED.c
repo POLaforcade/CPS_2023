@@ -3,8 +3,8 @@
 #include <string.h>
 #include <unistd.h>
 
-#define GPIO_SYSFS "/sys/class/gpio/"
-#define GPIO_FILE "/sys/class/gpio/gpio"
+// #define GPIO_SYSFS "/sys/class/gpio/"
+// #define GPIO_FILE "/sys/class/gpio/gpio"
 
 void writeGPIO(char filename[], char value[])
 {
@@ -15,16 +15,17 @@ void writeGPIO(char filename[], char value[])
 }
 
 int main(int argc, char* argv[]){
-   if(argc!=3)// We should have 3 args to run the program : program_name GPIO_pin nb_blink
-   { 
-      printf("Please choose [1] : GPIO Pin, [2] : number of time LED should blink");
-      return 2;
-   }
 
    printf("Recuperation des parametres");
 
    int nb_gpio;
    int nb_blink;
+   
+   if(argc!=3)// We should have 3 args to run the program : program_name GPIO_pin nb_blink
+   { 
+      printf("Please choose [1] : GPIO Pin, [2] : number of time LED should blink");
+      return 2;
+   }
 
    sscanf(argv[2], "%d", &nb_gpio);
    sscanf(argv[3], "%d", &nb_blink);
