@@ -19,13 +19,13 @@ int main(int argc, char* argv[]){
       printf("Please choose [1] : GPIO Pin, [2] : number of time LED should blink\n");
       return 2;
    }
-   printf("%s", argv[1]);
-   // int nb_gpio = atoi(argv[1]);
-   // int nb_blink = atoi(argv[2]);
-   // printf("test");
-   // char* str_gpio;
-   // sprintf(str_gpio, "%d/", nb_gpio);
-   // printf("Starting the blink LED program %d times on GPIO %d\n", nb_blink, nb_gpio);
+
+   int nb_gpio = atoi(argv[1]);
+   int nb_blink = atoi(argv[2]);
+   char* str_gpio;
+   sprintf(str_gpio, "%d/", nb_gpio);
+   printf("Starting the blink LED program %d times on GPIO %d\n", nb_blink, nb_gpio);
+
    // // Setup the path to the correct GPIO
    // strcat(GPIO_FILE, str_gpio);
    // // setup GPIO pin
