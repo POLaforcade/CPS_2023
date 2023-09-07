@@ -34,13 +34,13 @@ int main(int argc, char* argv[]){
    printf("Setting up the LED on the GPIO\n");
    writeGPIO(GPIO_SYSFS "export", argv[1]);
    usleep(100000);
-   
-   char GPIO_DIR[50] = GPIO_FILE;
+
+   char GPIO_DIR[50] = GPIO_PATH;
    strcat(GPIO_DIR, "direction");
    writeGPIO(GPIO_DIR, "out");
 
    // blink
-   char GPIO_VAL[50] = GPIO_FILE;
+   char GPIO_VAL[50] = GPIO_PATH;
    strcat(GPIO_VAL, "value");
    for(int i=0; i<nb_blink; i++)
    {
