@@ -9,19 +9,17 @@
 void writeGPIO(char filename[], char value[])
 {
    FILE* fp;                           // create a file pointer fp
-   fp = fopen(filename, "w");         // open file for writing
+   fp = fopen(filename, "w");          // open file for writing
    fprintf(fp, "%s", value);           // send the value to the file
    fclose(fp);                         // close the file using fp
 }
 
 int main(int argc, char* argv[]){
 
-   if(argc!=3)// We should have 3 args to run the program : program_name GPIO_pin nb_blink
-   { 
+   if(argc!=3) {                       // We should have 3 args to run the program : program_name GPIO_pin nb_blink
       printf("Please choose [1] : GPIO Pin, [2] : number of time LED should blink\n");
       return 2;
    }
-   else{printf("test");}
 
    printf("%s", argv[1]);
 
