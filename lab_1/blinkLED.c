@@ -21,8 +21,8 @@ int main(int argc, char* argv[]){
    int nb_gpio;
    int nb_blink;
 
-   std::str GPIO_SYSFS = "";
-   std::str GPIO_FILE = "";
+   char* GPIO_SYSFS = "";
+   char* GPIO_FILE = "";
 
    if(argc!=3)// We should have 3 args to run the program : program_name GPIO_pin nb_blink
    { 
