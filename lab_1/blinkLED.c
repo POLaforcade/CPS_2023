@@ -21,14 +21,11 @@ int main(int argc, char* argv[]){
    int nb_gpio;
    int nb_blink;
 
-   // char* GPIO_SYSFS = "";
-   // char* GPIO_FILE = "";
-
-   // if(argc!=3)// We should have 3 args to run the program : program_name GPIO_pin nb_blink
-   // { 
-   //    printf("Please choose [1] : GPIO Pin, [2] : number of time LED should blink");
-   //    return 2;
-   // }
+   if(argc!=3)// We should have 3 args to run the program : program_name GPIO_pin nb_blink
+   { 
+      printf("Please choose [1] : GPIO Pin, [2] : number of time LED should blink");
+      return 2;
+   }
 
    // sscanf(argv[2], "%d", &nb_gpio);
    // sscanf(argv[3], "%d", &nb_blink);
