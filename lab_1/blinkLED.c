@@ -28,6 +28,7 @@ int main(int argc, char* argv[]){
    // Setup the path to the correct GPIO
    strcat(GPIO_FILE, argv[1]);
    strcat(GPIO_FILE, "/");
+   printf("%s\n", GPIO_FILE);
 
    // // setup GPIO pin
    // printf("Setting up the LED on the GPIO\n");
