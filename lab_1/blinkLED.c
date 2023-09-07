@@ -24,7 +24,7 @@ int main(int argc, char* argv[]){
 
    int nb_gpio = atoi(argv[1]);
    int nb_blink = atoi(argv[2]);
-   print("test");
+   printf("test");
    char* str_gpio;
    sprintf(str_gpio, "%d/", nb_gpio);
 
