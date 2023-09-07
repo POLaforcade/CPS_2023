@@ -28,11 +28,11 @@ int main(int argc, char* argv[]){
    char GPIO_FILE[100] = GPIO_PATH;
    strcat(GPIO_FILE, argv[1]);
    strcat(GPIO_FILE, "/");
-   printf("%s\n", GPIO_FILE);
 
    // setup GPIO pin
    writeGPIO(GPIO_SYSFS "export", argv[1]);
    usleep(100000);
+   printf("test")
 
    char GPIO_DIR[100] = GPIO_PATH;
    strcat(GPIO_DIR, "direction");
