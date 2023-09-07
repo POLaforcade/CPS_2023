@@ -19,7 +19,7 @@ int main(int argc, char* argv[]){
       printf("Please choose [1] : GPIO Pin, [2] : number of time LED should blink\n");
       return 2;
    }
-   // printf("%s", argv[1]);
+   printf("%s", argv[1]);
    // int nb_gpio = atoi(argv[1]);
    // int nb_blink = atoi(argv[2]);
    // printf("test");
