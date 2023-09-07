@@ -31,9 +31,12 @@ int main(int argc, char* argv[]){
    strcat(GPIO_FILE, "/");
 
    // setup GPIO pin
-   char GPIO_EXP[100] = GPIO_SYSFS;
+   char* GPIO_EXP = GPIO_SYSFS;
    strcat(GPIO_EXP, "export");
-   printf("%s", GPIO_EXP);
+
+   printf("test");
+   printf("%s\n", GPIO_EXP);
+
    writeGPIO(GPIO_EXP,argv[1]);
    usleep(100000);
 
