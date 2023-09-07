@@ -1,7 +1,7 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-#include<unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 
 #define GPIO_SYSFS "/sys/class/gpio/"
 #define GPIO_FILE "/sys/class/gpio/gpio"
@@ -20,6 +20,8 @@ int main(int argc, char* argv[]){
       printf("Please choose [1] : GPIO Pin, [2] : number of time LED should blink");
       return 2;
    }
+
+   printf("Recuperation des parametres");
 
    int nb_gpio;
    int nb_blink;
