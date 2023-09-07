@@ -4,6 +4,7 @@
 #include <unistd.h>
 
 #define GPIO_SYSFS "/sys/class/gpio/"
+#define GPIO_PATH "/sys/class/gpio/gpio"
 
 void writeGPIO(char filename[], char value[])
 {
@@ -24,7 +25,7 @@ int main(int argc, char* argv[]){
    printf("Starting the blink LED program %d times on GPIO %d\n", nb_blink, nb_gpio);
 
    // Setup the path to the correct GPIO
-   char GPIO_FILE[50] = "/sys/class/gpio/gpio";
+   char GPIO_FILE[50] = GPIO_PATH;
    strcat(GPIO_FILE, argv[1]);
    strcat(GPIO_FILE, "/");
    printf("%s\n", GPIO_FILE);
