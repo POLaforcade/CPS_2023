@@ -6,6 +6,9 @@
 #define GPIO_SYSFS "/sys/class/gpio/"
 #define GPIO_PATH "/sys/class/gpio/gpio"
 
+#define GPIO_NUMBER "4"
+#define GPIO4_PATH "/sys/class/gpio/gpio4/"
+
 void writeGPIO(char filename[], char value[])
 {
    FILE* fp;                           // create a file pointer fp
@@ -29,37 +32,39 @@ int main(int argc, char* argv[]){
    int nb_blink = atoi(argv[2]);
    printf("Starting the blink LED program %d times on GPIO %d\n", nb_blink, nb_gpio);
 
-   // Setup the path to the correct GPIO
-   char GPIO_FILE[100] = GPIO_PATH;
-   strcat(GPIO_FILE, argv[1]);
-   strcat(GPIO_FILE, "/");
+   writeGPIO(GPIO_SYSFS "export", argv[1]);
 
-   // setup GPIO pin
-   char GPIO_EXP[100] = GPIO_SYSFS;
-   strcat(GPIO_EXP, "export");
+   // // Setup the path to the correct GPIO
+   // char GPIO_FILE[100] = GPIO_PATH;
+   // strcat(GPIO_FILE, argv[1]);
+   // strcat(GPIO_FILE, "/");
 
-   printf("%s\n", GPIO_EXP);
+   // // setup GPIO pin
+   // char GPIO_EXP[100] = GPIO_SYSFS;
+   // strcat(GPIO_EXP, "export");
 
-   writeGPIO(GPIO_EXP,argv[1]);
-   usleep(100000);
+   // printf("%s\n", GPIO_EXP);
 
-   char GPIO_DIR[100] = GPIO_PATH;
-   strcat(GPIO_DIR, "direction");
-   writeGPIO(GPIO_DIR, "out");
+   // writeGPIO(GPIO_EXP,argv[1]);
+   // usleep(100000);
 
-   // blink
-   char GPIO_VAL[100] = GPIO_PATH;
-   strcat(GPIO_VAL, "value");
-   printf("Setting up the LED on the GPIO\n");
-   for(int i=0; i<nb_blink; i++)
-   {
-      writeGPIO(GPIO_VAL, "1");
-      usleep(500000);
-      writeGPIO(GPIO_VAL, "0");
-      usleep(500000);
-   }
+   // char GPIO_DIR[100] = GPIO_PATH;
+   // strcat(GPIO_DIR, "direction");
+   // writeGPIO(GPIO_DIR, "out");
 
-   // unexport GPIO pin
-   writeGPIO(GPIO_SYSFS "unexport", argv[1]);
-   return 0;
+   // // blink
+   // char GPIO_VAL[100] = GPIO_PATH;
+   // strcat(GPIO_VAL, "value");
+   // printf("Setting up the LED on the GPIO\n");
+   // for(int i=0; i<nb_blink; i++)
+   // {
+   //    writeGPIO(GPIO_VAL, "1");
+   //    usleep(500000);
+   //    writeGPIO(GPIO_VAL, "0");
+   //    usleep(500000);
+   // }
+
+   // // unexport GPIO pin
+   // writeGPIO(GPIO_SYSFS "unexport", argv[1]);
+   // return 0;
 }
