@@ -1,5 +1,6 @@
 #include <wiringPi.h>
 #include <stdio.h>
+#include<string.h>
 
 #define PIN_LED 4
 #define PIN_BUTTON 18
@@ -20,7 +21,7 @@ void myISR(void)
     else
         if(cnt == 2*N){
             digitalWrite(PIN_LED, LOW) ;
-            cnt = 0
+            cnt = 0 ;
         }
 
     delay(50);
