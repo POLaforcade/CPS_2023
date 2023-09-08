@@ -3,7 +3,6 @@
 #include <string.h>
 #include <unistd.h>
 
-#define GPIO_NUMBER "4"
 #define GPIO_SYSFS "/sys/class/gpio/"
 #define GPIO_PATH "/sys/class/gpio/gpio"
 
