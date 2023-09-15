@@ -48,7 +48,9 @@ int main(int argc, char **argv)
     // Setting up GPIO pins
     pinMode(PIN_LED, OUTPUT);
     pinMode(PIN_BUTTON, INPUT);
-    pullUpDnControl(PIN_BUTTON, PUD_UP);
+    pullUpDnControl(PIN_BUTTON, PUD_DOWN);
+
+    printf("Button pin has been setup.\n");
     
     if(wiringPiISR(PIN_BUTTON, INT_EDGE_FALLING, myISR) < 0){
         printf("ISR setup error!\n");
