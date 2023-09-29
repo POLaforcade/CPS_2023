@@ -10,18 +10,22 @@
 #define GREEN_PIN   27
 #define BLUE_PIN    22
 
+void extractRGBFromString(char *rgbString, int *red, int *green, int *blue) {
+    *red = strtol(rgbString + 2, NULL, 16);
+    *green = strtol(rgbString + 4, NULL, 16);
+    *blue = strtol(rgbString + 6, NULL, 16);
+}
 
 int main(int argc, char **argv)
 {
-    if(argc!=4){
-        printf("Please choose [1] : Red, [2] : Green, [3] : Blue, between 0 and 255\n");
+    if(argc!=2){
+        printf("Please choose [1] : RGB values\n");
         return 2;
     }
 
     int LedPin[3] = {RED_PIN, GREEN_PIN, BLUE_PIN};
-    int R = (atoi(argv[1])*100)/255;
-    int G = (atoi(argv[2])*100)/255;
-    int B = (atoi(argv[3])*100)/255;
+    int R, G, B;
+    extractRGBFromString(argv[1], &R, &G, &B);
 
     wiringPiSetupGpio();
 
