@@ -50,7 +50,7 @@ int main(int argc, char **argv)
     softPwmWrite(LedPin[2], B);  // Value for Blue Pin
     delay(10);
 
-    sleep(2);
+    sleep(10);
 
     return 0;
 }
