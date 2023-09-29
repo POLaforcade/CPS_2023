@@ -44,7 +44,9 @@ int main(int argc, char **argv)
 
     // Writing the value for PWM
     softPwmWrite(LedPin[0], R);  // Value for Red Pin
+    delay(1000);
     softPwmWrite(LedPin[1], G); // Value for Green Pin
+    delay(1000);
     softPwmWrite(LedPin[2], B);  // Value for Blue Pin
 
     delay(2000);
