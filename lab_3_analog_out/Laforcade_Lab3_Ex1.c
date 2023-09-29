@@ -32,9 +32,11 @@ int main(int argc, char **argv)
     G = (255 - G) * 100 / 255;
     B = (255 - B) * 100 / 255;
 
-    R = R * 100 / R+G+B;
-    G = G * 100 / R+G+B;
-    B = B * 100 / R+G+B;
+    int sum = R+G+B;
+
+    R = R * 100 / sum;
+    G = G * 100 / sum;
+    B = B * 100 / sum;
 
     wiringPiSetupGpio();
 
