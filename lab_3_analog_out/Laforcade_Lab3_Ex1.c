@@ -34,9 +34,9 @@ int main(int argc, char **argv)
 
     int sum = R+G+B;
 
-    R = R * 100 / sum;
-    G = G * 100 / sum;
-    B = B * 100 / sum;
+    R = R * (100 / sum);
+    G = G * (100 / sum);
+    B = B * (100 / sum);
 
     wiringPiSetupGpio();
 
