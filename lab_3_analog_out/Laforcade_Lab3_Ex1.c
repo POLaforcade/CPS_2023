@@ -11,9 +11,9 @@
 #define BLUE_PIN    22
 
 void extractRGBFromString(char *rgbString, int *red, int *green, int *blue) {
-    *red = strtol(rgbString + 2, NULL, 16);
-    *green = strtol(rgbString + 4, NULL, 16);
-    *blue = strtol(rgbString + 6, NULL, 16);
+    *red = (strtol(rgbString + 2, NULL, 16) >> 16) & 0xFF;
+    *green = (strtol(rgbString + 2, NULL, 16) >> 8) & 0xFF;
+    *blue = strtol(rgbString + 2, NULL, 16) & 0xFF;
 }
 
 int main(int argc, char **argv)
@@ -26,10 +26,11 @@ int main(int argc, char **argv)
     int LedPin[3] = {RED_PIN, GREEN_PIN, BLUE_PIN};
     int R, G, B;
     extractRGBFromString(argv[1], &R, &G, &B);
-    printf("%d %d %d \n", R, G, B);
-    R = 255-(R>>16);
-    G = 255-(G>>8),
-    B = 255-B;
+    printf("Original RGB: %d %d %d\n", R, G, B);
+
+    R = 255 - R;
+    G = 255 - G;
+    B = 255 - B;
 
     wiringPiSetupGpio();
 
@@ -39,7 +40,7 @@ int main(int argc, char **argv)
         softPwmCreate(LedPin[i], 0, RANGE);
     }
 
-    printf("%d %d %d \n", R, G, B);
+    printf("Inverted RGB: %d %d %d\n", R, G, B);
 
     // Writing the value for PWM
     softPwmWrite(LedPin[0], R);  // Value for Red Pin
