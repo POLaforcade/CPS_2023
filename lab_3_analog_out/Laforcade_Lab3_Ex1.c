@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include<stdio.h>
 
 #define RANGE       100
 #define RED_PIN     17
