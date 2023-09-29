@@ -28,9 +28,9 @@ int main(int argc, char **argv)
     extractRGBFromString(argv[1], &R, &G, &B);
     printf("Original RGB: %d %d %d\n", R, G, B);
 
-    R = 255 - R;
-    G = 255 - G;
-    B = 255 - B;
+    R = (255 - R) * 100 / 255;
+    G = (255 - G) * 100 / 255;
+    B = (255 - B) * 100 / 255;
 
     wiringPiSetupGpio();
 
