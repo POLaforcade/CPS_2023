@@ -49,7 +49,7 @@ int main(int argc, char **argv)
     delay(1000);
     softPwmWrite(LedPin[2], B);  // Value for Blue Pin
 
-    delay(2000);
+    sleep(10);
 
     return 0;
 }
