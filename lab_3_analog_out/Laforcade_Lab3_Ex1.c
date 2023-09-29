@@ -32,6 +32,10 @@ int main(int argc, char **argv)
     G = (255 - G) * 100 / 255;
     B = (255 - B) * 100 / 255;
 
+    R = R * 100 / R+G+B;
+    G = G * 100 / R+G+B;
+    B = B * 100 / R+G+B;
+
     wiringPiSetupGpio();
 
     // Setup three PINS for Soft PWM
