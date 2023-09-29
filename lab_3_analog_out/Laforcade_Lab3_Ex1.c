@@ -32,9 +32,9 @@ int main(int argc, char **argv)
     }
 
     // Writing the value for PWM
-    softPwmWrite(LedPin[0], );  // Value for Red Pin
-    softPwmWrite(LedPin[1], ); // Value for Green Pin
-    softPwmWrite(LedPin[2], );  // Value for Blue Pin
+    softPwmWrite(LedPin[0], R);  // Value for Red Pin
+    softPwmWrite(LedPin[1], G); // Value for Green Pin
+    softPwmWrite(LedPin[2], B);  // Value for Blue Pin
     sleep(10);
 
     return 0;
