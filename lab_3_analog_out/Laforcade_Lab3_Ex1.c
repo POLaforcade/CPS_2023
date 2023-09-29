@@ -28,11 +28,11 @@ int main(int argc, char **argv)
     extractRGBFromString(argv[1], &R, &G, &B);
     printf("Original RGB: %d %d %d\n", R, G, B);
 
-    R = (255 - R) * 100 / 255;
-    G = (255 - G) * 100 / 255;
-    B = (255 - B) * 100 / 255;
+    R = (255 - R) * 100 / 255.;
+    G = (255 - G) * 100 / 255.;
+    B = (255 - B) * 100 / 255.;
 
-    int sum = R+G+B;
+    float sum = R+G+B;
 
     R = R * (100 / sum);
     G = G * (100 / sum);
