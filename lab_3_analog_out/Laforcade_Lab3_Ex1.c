@@ -35,6 +35,8 @@ int main(int argc, char **argv)
         softPwmCreate(LedPin[i], 0, RANGE);
     }
 
+    printf("%d %d %d \n", R, G, B);
+
     // Writing the value for PWM
     softPwmWrite(LedPin[0], R);  // Value for Red Pin
     softPwmWrite(LedPin[1], G); // Value for Green Pin
