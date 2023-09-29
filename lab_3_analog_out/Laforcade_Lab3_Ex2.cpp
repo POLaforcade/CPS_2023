@@ -1,5 +1,9 @@
 #include <iostream>
 #include <wiringPi.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include<stdio.h>
 
 using namespace std;
 
