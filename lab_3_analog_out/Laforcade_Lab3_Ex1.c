@@ -48,6 +48,7 @@ int main(int argc, char **argv)
     softPwmWrite(LedPin[1], G); // Value for Green Pin
     delay(1000);
     softPwmWrite(LedPin[2], B);  // Value for Blue Pin
+    delay(1000);
 
     sleep(10);
 
