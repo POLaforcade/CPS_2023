@@ -26,8 +26,8 @@ int main(int argc, char **argv)
     int LedPin[3] = {RED_PIN, GREEN_PIN, BLUE_PIN};
     int R, G, B;
     extractRGBFromString(argv[1], &R, &G, &B);
-    R = R;
-    G = G,
+    R = R>>16;
+    G = G>>8,
     B = B;
 
     wiringPiSetupGpio();
