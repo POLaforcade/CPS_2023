@@ -1,5 +1,8 @@
 #include <wiringPi.h>
 #include <softPwm.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
 
 #define RANGE       100
 #define RED_PIN     17
