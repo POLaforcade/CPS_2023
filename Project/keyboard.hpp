@@ -52,6 +52,7 @@ public:
         if(colVal < 0 || colVal > 3){
             return -1;
         }
+        std::cout<<rowVal<<" ; " << colVal <std::endl;
         switch(rowVal){
             case 0:
             switch(colVal){
