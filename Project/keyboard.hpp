@@ -102,10 +102,10 @@ public:
 
 typedef enum {
     S0,
-    1KEY,
-    2KEY,
-    3KEY,
-    4KEY,
+    KEY1,
+    KEY2,
+    KEY3,
+    KEY4,
     INCORRECT
 } State;
 
@@ -127,43 +127,43 @@ int read_code()
                     if(key >= 0 && key<=9)
                     {
                         code += key*1000;
-                        current_state = 1KEY;
+                        current_state = KEY1;
                     }
                     else{
                         current_state = INCORRECT;
                     }
                     break;
-                case 1KEY:
+                case KEY1:
                     if(key >= 0 && key<=9)
                     {
                         code += key*100;
-                        current_state = 2KEY;
+                        current_state = KEY2;
                     }
                     else{
                         current_state = INCORRECT;
                     }
                     break;
-                case 2KEY:
+                case KEY2:
                     if(key >= 0 && key<=9)
                     {
                         code += key;
-                        current_state = 3KEY;
+                        current_state = KEY3;
                     }
                     else{
                         current_state = INCORRECT;
                     }
                     break;
-                case 3KEY:
+                case KEY3:
                     if(key >= 0 && key<=9)
                     {
                         code += key;
-                        current_state = 4KEY;
+                        current_state = KEY4;
                     }
                     else{
                         current_state = INCORRECT;
                     }
                     break;
-                case 4KEY:
+                case KEY4:
                     return code;
                     break;
                 case INCORRECT:
@@ -174,6 +174,4 @@ int read_code()
             }
         }
     }
-
-    switch 
 }
