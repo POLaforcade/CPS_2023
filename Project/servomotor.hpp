@@ -10,8 +10,8 @@ class servomotor {
 
 private:
 
-    static const int SERVO_MIN_PWM = 100;
-    static const int SERVO_MAX_PWM = 200;
+    static const int SERVO_MIN_PWM = 0;
+    static const int SERVO_MAX_PWM = 400;
 
     int map(int value, int fromLow, int fromHigh, int toLow, int toHigh) const {
         return (value - fromLow) * (toHigh - toLow) / (fromHigh - fromLow) + toLow;
