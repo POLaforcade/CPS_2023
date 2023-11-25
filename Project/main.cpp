@@ -1,3 +1,4 @@
+#include <iostream>
 #include "rgb.h"
 
 int main()

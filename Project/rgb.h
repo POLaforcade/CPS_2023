@@ -1,7 +1,6 @@
+#include <iostream>
 #include <wiringPi.h>
 #include <softPwm.h>
-#include <iostream>
-#include <stdio.h>
 
 #define RED_PIN     16
 #define GREEN_PIN   20
