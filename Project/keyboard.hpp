@@ -109,7 +109,7 @@ typedef enum {
     INCORRECT
 } State;
 
-int read_code()
+int read_code(keyboard &keyboard_1)
 {
     int key = -1;
     State current_state = S0;
