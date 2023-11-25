@@ -15,7 +15,7 @@ public:
         int tmpRead;
         int rowVal = -1;
         int colVal = -1;
-        char keyVal = -1;
+        char keyVal;
 
         for(i = 0; i < 4; i++){
             pinMode(COLUMN[i], OUTPUT);
@@ -112,12 +112,12 @@ typedef enum {
 int read_code(keyboard &keyboard_1)
 {
     int key = -1;
+    int code = 0;
     State current_state = S0;
     std::cout<<"Rentrez votre code svp"<<std::endl;
 
     while(1)
     {
-        int code = 0;
         key = keyboard_1.getKey();
         if(key != -1)
         {
