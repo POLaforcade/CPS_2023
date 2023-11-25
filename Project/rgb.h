@@ -25,11 +25,11 @@ public:
         G = (255 - G) * 100 / 255.;
         B = (255 - B) * 100 / 255.;
 
-        softPwmWrite(LedPin[0], R);
+        softPwmWrite(RED_PIN, R);
         delay(10);
-        softPwmWrite(LedPin[1], G);
+        softPwmWrite(GREEN_PIN, G);
         delay(10);
-        softPwmWrite(LedPin[2], B);
+        softPwmWrite(BLUE_PIN, B);
         delay(10);
 
     }
