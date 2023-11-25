@@ -13,8 +13,8 @@ private:
     static const int SERVO_MIN_PWM = 100;
     static const int SERVO_MAX_PWM = 200;
 
-    int map(int value, int fromLow, int fromHigh, int toLow, int toHigh) const {
-        return (value - fromLow) * (toHigh - toLow) / (fromHigh - fromLow) + toLow;
+    int map(int alpha, int alpha_min, int alpha_max, int pulse_min, int pulse_max) const {
+        return (((pulse_max-pulse_min)*(alpha-alpha_min))/(alpha_max-alpha_min))+pulse_min;
     }
 public:
     servomotor() {
