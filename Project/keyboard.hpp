@@ -168,7 +168,7 @@ int read_code()
                 case INCORRECT:
                     return -1;
                     break;
-                case default:
+                default:
                     break;
             }
         }
