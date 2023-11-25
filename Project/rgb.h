@@ -23,9 +23,9 @@ public:
 
     void Color(int R, int G, int B)
     {
-        R = (255 - R) * 100 / 255.;
-        G = (255 - G) * 100 / 255.;
-        B = (255 - B) * 100 / 255.;
+        R = 255 - R;
+        G = 255 - G;
+        B = 255 - B;
 
         softPwmWrite(RED_PIN, R);
         delay(10);
