@@ -3,7 +3,7 @@
 
 int main()
 {
-    wiringPiSetupGpio();
-    servomotor servo_1;
-    servo_1.setAngle(90);
+    BGR led1;
+    led1.Color(0, 0, 0);
+    return 0;
 }
