@@ -1,3 +1,6 @@
+#ifndef _RGB_H_
+#define _RGB_H_
+
 #include <iostream>
 #include <wiringPi.h>
 #include <softPwm.h>
@@ -33,3 +36,5 @@ public:
 
     }
 };
+
+#endif
