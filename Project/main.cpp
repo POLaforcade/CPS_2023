@@ -16,7 +16,7 @@ int main(void)
     // Control 
     while (1)
     {
-        int test = read_code();
+        int test = read_code(keyboard_1);
         printf("code rentre = %d\n", test);
     }
     return 0;
