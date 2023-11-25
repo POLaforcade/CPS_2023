@@ -5,9 +5,9 @@
 #include <wiringPi.h>
 #include <softPwm.h>
 
-#define RED_PIN     16
-#define GREEN_PIN   20
-#define BLUE_PIN    21
+#define RED_PIN     6
+#define GREEN_PIN   13
+#define BLUE_PIN    19
 
 class RGB
 {
