@@ -112,8 +112,7 @@ typedef enum {
 int read_code()
 {
     int key = -1;
-    State current_state = S0
-
+    State current_state = S0;
     std::cout<<"Rentrez votre code svp"<<std::endl;
 
     while(1)
