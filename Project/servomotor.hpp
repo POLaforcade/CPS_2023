@@ -17,7 +17,7 @@ private:
         return (value - fromLow) * (toHigh - toLow) / (fromHigh - fromLow) + toLow;
     }
 public:
-    ServoMotor() {
+    servomotor() {
         pinMode(SERVO_PIN, PWM_OUTPUT);
 
         pwmSetMode(PWM_MODE_MS);
