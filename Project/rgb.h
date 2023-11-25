@@ -1,6 +1,7 @@
 #include <wiringPi.h>
 #include <softPwm.h>
 #include <iostream>
+#include <stdio.h>
 
 #define RED_PIN     16
 #define GREEN_PIN   20
@@ -11,7 +12,7 @@ class RGB
 
 public:
     // Constructor
-    RGB():r(0), g(0), b(0)
+    RGB()
     {
         softPwmCreate(RED_PIN, 0, 255);
         softPwmCreate(GREEN_PIN, 0, 255);
