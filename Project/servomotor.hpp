@@ -11,7 +11,7 @@ class servomotor {
 private:
 
     static const int SERVO_MIN_PWM = 100;
-    static const int SERVO_MAX_PWM = 200;
+    static const int SERVO_MAX_PWM = 300;
 
     int map(int alpha, int alpha_min, int alpha_max, int pulse_min, int pulse_max) const {
         return (((pulse_max-pulse_min)*(alpha-alpha_min))/(alpha_max-alpha_min))+pulse_min;
