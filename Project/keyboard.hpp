@@ -11,23 +11,22 @@ public:
 
     char getKey()
     {
-        int i;
         int tmpRead;
         int rowVal = -1;
         int colVal = -1;
         char keyVal;
 
-        for(i = 0; i < 4; i++){
+        for(int i = 0; i < 4; i++){
             pinMode(COLUMN[i], OUTPUT);
             digitalWrite(COLUMN[i], LOW);
         }
 
-        for(i = 0; i < 4; i++){
+        for(int i = 0; i < 4; i++){
             pinMode(ROW[i], INPUT);
             pullUpDnControl(ROW[i], PUD_UP);
         }
 
-        for(i = 0; i < 4; i++){
+        for(int i = 0; i < 4; i++){
             tmpRead = digitalRead(ROW[i]);
             if(tmpRead == 0){
                 rowVal = i;
@@ -37,13 +36,13 @@ public:
             return -1;
         }
         
-        for(i = 0; i < 4; i++){
+        for(int i = 0; i < 4; i++){
             pinMode(COLUMN[i], INPUT);
             pullUpDnControl(COLUMN[i], PUD_UP);
         }
         pinMode(ROW[rowVal], OUTPUT);
         digitalWrite(ROW[rowVal], LOW);
-        for(i = 0; i < 4; i++){
+        for(int i = 0; i < 4; i++){
             tmpRead = digitalRead(COLUMN[i]);
             if(tmpRead == 0){
                 colVal = i;
@@ -120,6 +119,7 @@ int read_code(keyboard &keyboard_1)
     while(1)
     {
         key = keyboard_1.getKey();
+        std::cout<<"key ="<<key << std::endl;
         if(key != -1)
         {
             switch(current_state){

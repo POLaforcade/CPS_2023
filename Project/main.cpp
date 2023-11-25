@@ -14,8 +14,8 @@ int main(void)
     servomotor servo_1;
 
     // Control 
-    int test = read_code(keyboard_1);
-    printf("code rentre = %d\n", test);
+    int key = keyboard_1.getKey();
+    printf("key rentre = %d\n", key);
 
     return 0;
 }
