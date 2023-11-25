@@ -1,9 +1,9 @@
-#include "rgb.h"
+#include "bgr.hpp"
+#include "servomotor.hpp"
 
 int main()
 {
     wiringPiSetupGpio();
-    RGB LED_1;
-    LED_1.Color(255, 0, 0);
-    return 0;
+    servomotor servo_1;
+    servo_1.set(90)
 }

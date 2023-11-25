@@ -9,12 +9,12 @@
 #define GREEN_PIN   13
 #define BLUE_PIN    19
 
-class RGB
+class BGR
 {
 
 public:
     // Constructor
-    RGB()
+    BGR()
     {
         softPwmCreate(RED_PIN, 0, 255);
         softPwmCreate(GREEN_PIN, 0, 255);
