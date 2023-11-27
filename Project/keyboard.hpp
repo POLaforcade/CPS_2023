@@ -119,7 +119,7 @@ int read_code(keyboard &keyboard_1)
     while(1)
     {
         key = keyboard_1.getKey();
-        std::cout<<"key ="<<key << std::endl;
+        // std::cout<<"key ="<<key << std::endl;
         if(key != -1)
         {
             switch(current_state){
