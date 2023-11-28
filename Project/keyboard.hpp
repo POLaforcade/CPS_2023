@@ -175,7 +175,7 @@ int read_code()
                         return code;
                     }
                     else
-                        state = INCORRECT; 
+                        current_state = INCORRECT; 
                     break;
                 case INCORRECT:
                     return -1;
