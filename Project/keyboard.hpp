@@ -12,7 +12,7 @@ int getKey(void)
 	int tmpRead;
 	int rowVal = -1;
 	int colVal = -1;
-	char keyVal;
+	char keyVal = 0;
 
 	for(i = 0; i < 4; i++){
 		pinMode(COLUMN[i], OUTPUT);
