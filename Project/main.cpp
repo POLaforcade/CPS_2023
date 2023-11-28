@@ -4,15 +4,15 @@
 #include "bgr.hpp"
 #include "servomotor.hpp"
 
+#define PIN_BUTTON 4
+
 int code = 0000;
 int admin = 0000;
 bool locked = true;
 bool is_opened = false;
 
 BGR led_1;
-keyboard keyboard_1;
 servomotor servo_1;
-
 
 typedef enum
 {
@@ -28,7 +28,7 @@ void ISR_button(void)
     if (digitalRead(PIN_BUTTON) == 0){
         printf("Button Pressed detected using ISR\n");
         // Decides if we should open/close the chest or not
-        if(locked == false && super_locked == false && is_open == false)
+        if(locked == false && is_opened == false)
         {
             // Opens the chest
             servo_1.setAngle(180);
@@ -38,7 +38,7 @@ void ISR_button(void)
         {
             // Closes the chest
             servo_1.setAngle(0);
-            is_opened = close;
+            is_opened = false;
         }
         delay(50);
     }
@@ -78,12 +78,10 @@ int main(void)
                 locked = true
                 c = keyboard_1.getKey();
                 if(c == 'A')
-                    int input = read_code(keyboard_1);
-                    if(input == code)
+                    if(read_code() == code)
                         mode = UNLOCKED;
                 if(c == 'B')
-                    int input = read_code(keyboard_1);
-                    if(input == code)
+                    if(read_code() == admin)
                         mode = ADMIN;
                 break;
 
@@ -99,9 +97,9 @@ int main(void)
                 if(c=='A')
                     mode = LOCKED;
                 else if(c == 'B')
-                    admin = read_code(keyboard_1);
+                    admin = read_code();
                 else if(c == 'C')
-                    code = read_code(keyboard_1);
+                    code = read_code();
                 break;
 
             default:
