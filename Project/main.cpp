@@ -96,8 +96,10 @@ int main(void)
             case ADMIN:
                 c = getKey();
                 if(c=='A')
+                {
                     std::cout << "Locked chest" << std::endl;
                     mode = LOCKED;
+                }
                 else if(c == 'B')
                     admin = read_code();
                 else if(c == 'C')
