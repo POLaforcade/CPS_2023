@@ -98,8 +98,9 @@ int main(void)
                 c = getKey();
                 if(c=='A')
                 {
-                    std::cout << "Locked chest" << std::endl;
+                    std::cout << "Locked chest, Press[A] for unlock and [B] for admin" << std::endl;
                     mode = LOCKED;
+                    delay(200);
                 }
                 else if(c == 'B')
                 {
