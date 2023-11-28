@@ -19,7 +19,7 @@ int main(void)
     // Control
     while(1){
         code = read_code();
-        printf("code rentre = %d\n", code);
+        printf("code rentre = %4d\n", code);
         delay(200);
     }
 

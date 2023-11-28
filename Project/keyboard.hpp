@@ -150,7 +150,7 @@ int read_code()
                 case KEY2:
                     if(key >= 0 && key<=9)
                     {
-                        code += key;
+                        code += 10*key;
                         current_state = KEY3;
                     }
                     else{
