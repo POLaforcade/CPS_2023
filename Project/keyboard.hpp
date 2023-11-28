@@ -119,7 +119,7 @@ int read_code()
     State current_state = S0;
     while(1)
     {
-        _sleep(1);
+        sleep(1);
         tmp_key = getKey();
         if(tmp_key != -1)
         {
