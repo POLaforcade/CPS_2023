@@ -14,7 +14,7 @@ int main(void)
 
     // Creating all the objects
     BGR led_1;
-    servomotor servo_1;
+    servomotor_setup();
 
     // Control
     while(1){

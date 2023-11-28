@@ -119,7 +119,6 @@ int read_code()
     int code = 0;
     State current_state = S0;
     std::cout<<"Rentrez votre code svp"<<std::endl;
-
     while(1)
     {
         key = getKey();
