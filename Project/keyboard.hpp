@@ -12,7 +12,7 @@ int getKey(void)
 	int tmpRead;
 	int rowVal = -1;
 	int colVal = -1;
-	char keyVal = -1;
+	char keyVal;
 
 	for(i = 0; i < 4; i++){
 		pinMode(COLUMN[i], OUTPUT);
@@ -119,6 +119,7 @@ int read_code()
     State current_state = S0;
     while(1)
     {
+        delay(400);
         tmp_key = getKey();
         if(tmp_key != -1)
         {
@@ -180,7 +181,6 @@ int read_code()
                 default:
                     break;
             }
-            delay(400);
         }
     }
 }
