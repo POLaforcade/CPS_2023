@@ -132,6 +132,7 @@ int read_code()
                     {
                         code += key*1000;
                         current_state = KEY1;
+                        std::cout << '*';
                     }
                     else{
                         current_state = INCORRECT;
@@ -142,6 +143,7 @@ int read_code()
                     {
                         code += key*100;
                         current_state = KEY2;
+                        std::cout << '*';
                     }
                     else{
                         current_state = INCORRECT;
@@ -152,6 +154,7 @@ int read_code()
                     {
                         code += 10*key;
                         current_state = KEY3;
+                        std::cout << '*';
                     }
                     else{
                         current_state = INCORRECT;
@@ -162,6 +165,7 @@ int read_code()
                     {
                         code += key;
                         current_state = KEY4;
+                        std::cout << '*';
                     }
                     else{
                         current_state = INCORRECT;
