@@ -28,13 +28,13 @@ void ISR_button(void)
         if(locked == false && is_opened == false)
         {
             // Opens the chest
-            servo_1.setAngle(180);
+            setAngle(180);
             is_opened = true;
         }
         else
         {
             // Closes the chest
-            servo_1.setAngle(0);
+            setAngle(0);
             is_opened = false;
         }
         delay(50);
@@ -51,7 +51,7 @@ int main(void)
     }
 
     BGR led_1;
-    servomotor servo_1;
+    servomotor_setup();
 
     // Closes the chest by default
     servo_1.setAngle(0);
