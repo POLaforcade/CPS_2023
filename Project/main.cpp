@@ -11,9 +11,6 @@ int admin = 0000;
 bool locked = true;
 bool is_opened = false;
 
-BGR led_1;
-servomotor servo_1;
-
 typedef enum
 {
     LOCKED,
@@ -21,7 +18,7 @@ typedef enum
     ADMIN
 } Mode;
 
-void ISR_button(void)
+void ISR_button(servomotor &servo_1)
 {
     delay(10);
     // Make sure the button is pressed 1 time 
@@ -53,6 +50,9 @@ int main(void)
         return -1;
     }
 
+    BGR led_1;
+    servomotor servo_1;
+
     // Closes the chest by default
     servo_1.setAngle(0);
 
@@ -62,7 +62,7 @@ int main(void)
 
     printf("Button pin has been setup.\n");
     
-    if(wiringPiISR(PIN_BUTTON, INT_EDGE_FALLING, ISR_button) < 0){
+    if(wiringPiISR(PIN_BUTTON, INT_EDGE_FALLING, ISR_button(servo_1)) < 0){
         printf("ISR setup error!\n");
         return -1;
     }
