@@ -103,7 +103,6 @@ int main(void)
                 {
                     std::cout << "Locked chest, Press[A] for unlock and [B] for admin" << std::endl;
                     mode = LOCKED;
-                    delay(200);
                 }
                 else if(c == 'B')
                 {

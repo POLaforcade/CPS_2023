@@ -100,7 +100,7 @@ int getKey(void)
 		default: 
 			break;
 	}
-
+    delay(200);
 	return keyVal;
 }
 
