@@ -73,7 +73,7 @@ int main(void)
     char c;
     while(1)
     {
-        c = 0;
+        c = -1;
         switch(mode)
         {
             case LOCKED:
