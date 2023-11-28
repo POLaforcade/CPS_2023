@@ -1,98 +1,107 @@
 #include <wiringPi.h>
 #include <iostream>
+#include <stdio.h>
 
 const int ROW[]    = {22, 10, 11, 9};
 const int COLUMN[] = {12, 16, 20, 21};
 
 // Reads a key from the keyboard
-char getKey()
+int getKey(void)
 {
-    int tmpRead;
-    int rowVal = -1;
-    int colVal = -1;
-    char keyVal;
+	int i;
+	int tmpRead;
+	int rowVal = -1;
+	int colVal = -1;
+	char keyVal;
 
-    for(int i = 0; i < 4; i++){
-        pinMode(COLUMN[i], OUTPUT);
-        digitalWrite(COLUMN[i], LOW);
-    }
+	for(i = 0; i < 4; i++){
+		pinMode(COLUMN[i], OUTPUT);
+		digitalWrite(COLUMN[i], LOW);
+	}
 
-    for(int i = 0; i < 4; i++){
-        pinMode(ROW[i], INPUT);
-        pullUpDnControl(ROW[i], PUD_UP);
-    }
+	for(i = 0; i < 4; i++){
+		pinMode(ROW[i], INPUT);
+		pullUpDnControl(ROW[i], PUD_UP);
+	}
+	
+	for(i = 0; i < 4; i++){
+		tmpRead = digitalRead(ROW[i]);
+		if(tmpRead == 0){
+			rowVal = i;
+		}
+	}
 
-    for(int i = 0; i < 4; i++){
-        tmpRead = digitalRead(ROW[i]);
-        if(tmpRead == 0){
-            rowVal = i;
-        }
-    }
-    if(rowVal < 0 || rowVal > 3){
-        return -1;
-    }
-    
-    for(int i = 0; i < 4; i++){
-        pinMode(COLUMN[i], INPUT);
-        pullUpDnControl(COLUMN[i], PUD_UP);
-    }
-    pinMode(ROW[rowVal], OUTPUT);
-    digitalWrite(ROW[rowVal], LOW);
-    for(int i = 0; i < 4; i++){
-        tmpRead = digitalRead(COLUMN[i]);
-        if(tmpRead == 0){
-            colVal = i;
-        }
-    }
-    if(colVal < 0 || colVal > 3){
-        return -1;
-    }
-    std::cout<<rowVal<<" ; " << colVal <<std::endl;
-    switch(rowVal){
-        case 0:
-        switch(colVal){
-            case 0: keyVal = 1; break;
-            case 1: keyVal = 2; break;
-            case 2: keyVal = 3; break;
-            case 3: keyVal = 'A'; break;
-            default:
-            break;
-        }
-        break;
-        case 1:
-        switch(colVal){
-            case 0: keyVal = 4; break;
-            case 1: keyVal = 5; break;
-            case 2: keyVal = 6; break;
-            case 3: keyVal = 'B'; break;
-            default:
-            break;
-        }
-        break;
-        case 2:
-        switch(colVal){
-            case 0: keyVal = 7; break;
-            case 1: keyVal = 8; break;
-            case 2: keyVal = 9; break;
-            case 3: keyVal = 'C'; break;
-            default:
-            break;
-        }
-        break;
-        case 3:
-        switch(colVal){
-            case 0: keyVal = '*'; break;
-            case 1: keyVal = 0; break;
-            case 2: keyVal = '#'; break;
-            case 3: keyVal = 'D'; break;
-            default:
-            break;
-        }
-        break;
-        default:
-        break;
-    }
-    return keyVal;
+	if(rowVal < 0 || rowVal > 3){
+		return -1;
+	}
+	
+	for(i = 0; i < 4; i++){
+		pinMode(COLUMN[i], INPUT);
+		pullUpDnControl(COLUMN[i], PUD_UP);
+	}
+
+	pinMode(ROW[rowVal], OUTPUT);
+	digitalWrite(ROW[rowVal], LOW);
+
+	for(i = 0; i < 4; i++){
+		tmpRead = digitalRead(COLUMN[i]);
+		if(tmpRead == 0){
+			colVal = i;
+		}
+	}
+	
+	if(colVal < 0 || colVal > 3){
+		return -1;
+	}
+
+	//printf("%d, %d\n", rowVal, colVal);
+	switch(rowVal){
+		case 0:
+			switch(colVal){
+				case 0: keyVal = 0; break; 
+				case 1: keyVal = 1; break;
+				case 2: keyVal = 2; break;
+				case 3: keyVal = 3; break;
+				default:
+					break;
+			}
+			break;
+		case 1:
+			switch(colVal){
+				case 0: keyVal = 4; break;
+				case 1: keyVal = 5; break;
+				case 2: keyVal = 6; break;
+				case 3: keyVal = 7; break;
+				default:
+					break;
+			}
+			break;
+		case 2:
+			switch(colVal){
+				case 0: keyVal = 8; break;
+				case 1: keyVal = 9; break;
+				case 2: keyVal = 10; break;
+				case 3: keyVal = 11; break;
+				default:
+					break;
+			}
+			break;
+		case 3:
+			switch(colVal){
+				case 0: keyVal = 12; break;
+				case 1: keyVal = 13; break;
+				case 2: keyVal = 14; break;
+				case 3: keyVal = 15; break;
+				default:
+					break;
+				
+			}
+			break;
+		default: 
+			break;
+	}
+
+	return keyVal;
 }
 
 typedef enum {
