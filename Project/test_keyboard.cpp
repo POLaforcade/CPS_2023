@@ -18,10 +18,9 @@ int main(void)
 
     // Control
     while(1){
-        code = getKey();
-        if(code != -1)
-            printf("code rentre = %d\n", code);
-            delay(200);
+        code = read_code();
+        printf("code rentre = %d\n", code);
+        delay(200);
     }
 
     return 0;

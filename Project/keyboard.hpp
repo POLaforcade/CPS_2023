@@ -176,6 +176,7 @@ int read_code()
                 default:
                     break;
             }
+            delay(200);
         }
     }
 }
