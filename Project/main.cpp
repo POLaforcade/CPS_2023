@@ -110,16 +110,16 @@ int main(void)
 
             case ADMIN:
                 c = getKey();
-                if(c=='A')
-                {
-                    std::cout << "Locked chest\n[A] to unlock\n[B] to admin" << std::endl;
-                    mode = LOCKED;
-                }
                 if(c=='B')
                 {
                     std::cout << "New admin code : ";
                     admin = read_code();
                     std::cout << "Admin Code changed" << std::endl;
+                }
+                if(c=='A')
+                {
+                    std::cout << "Locked chest\n[A] to unlock\n[B] to admin" << std::endl;
+                    mode = LOCKED;
                 }
                 if(c == 'C')
                 {
