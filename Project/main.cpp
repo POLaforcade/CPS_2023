@@ -18,7 +18,7 @@ typedef enum
     ADMIN
 } Mode;
 
-void ISR_button(servomotor &servo_1)
+void ISR_button(void)
 {
     delay(10);
     // Make sure the button is pressed 1 time 
@@ -62,7 +62,7 @@ int main(void)
 
     printf("Button pin has been setup.\n");
     
-    if(wiringPiISR(PIN_BUTTON, INT_EDGE_FALLING, ISR_button(servo_1)) < 0){
+    if(wiringPiISR(PIN_BUTTON, INT_EDGE_FALLING, ISR_button) < 0){
         printf("ISR setup error!\n");
         return -1;
     }
