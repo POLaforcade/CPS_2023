@@ -77,7 +77,8 @@ int main(void)
                 locked = true;
                 c = getKey();
                 if(c == 'A'){
-                    if(read_code() == code){
+                    int tmp = read_code();
+                    if(tmp == code){
                         std::cout << "Valid Code\nUnlocked chest, Press[A] for lock " << std::endl;
                         mode = UNLOCKED;
                     }
