@@ -94,6 +94,7 @@ int main(void)
                 break;
 
             case ADMIN:
+                std::cout << "Bienvenue en mode ADMIN" << std::endl;
                 c = getKey();
                 if(c=='A')
                     mode = LOCKED;
