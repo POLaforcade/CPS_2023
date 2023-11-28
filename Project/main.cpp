@@ -77,8 +77,8 @@ int main(void)
                 locked = true;
                 c = getKey();
                 if(c == 'A'){
-                    delay(200);
                     printf("Password : ");
+                    delay(200);
                     if(read_code() == code){
                         std::cout << "Valid Code" << std::endl;
                         delay(1000);
@@ -90,8 +90,8 @@ int main(void)
                     }
                 }
                 else if(c == 'B'){
-                    delay(200);
                     printf("Password : ");
+                    delay(200);
                     if(read_code() == admin){
                         std::cout << "Welcome in mode ADMIN" << std::endl << "[A] To lock the chest\n[B] to change admin code\n[C] to change user code" << std::endl;
                         mode = ADMIN;
