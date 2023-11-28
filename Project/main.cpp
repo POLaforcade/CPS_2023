@@ -78,8 +78,7 @@ int main(void)
                 c = getKey();
                 if(c == 'A'){
                     delay(200);
-                    int tmp = read_code();
-                    if(tmp == code){
+                    if(read_code() == code){
                         std::cout << "Valid Code" << std::endl;
                         delay(1000);
                         std::cout << "Unlocked chest, Press[A] for lock " << std::endl;
