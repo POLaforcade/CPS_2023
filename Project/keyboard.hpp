@@ -117,7 +117,7 @@ int read_code()
     int tmp_key = -1;
     int res = 0;
     State current_state = S0;
-    std::cout<<"Password : ";
+    printf("Password : ");
     while(1)
     {
         tmp_key = getKey();
