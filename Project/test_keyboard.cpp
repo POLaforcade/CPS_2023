@@ -21,7 +21,7 @@ int main(void)
         code = getKey();
         if(code != -1)
             printf("code rentre = %d\n", code);
-            delay(200)
+            delay(200);
     }
 
     return 0;
