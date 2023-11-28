@@ -72,11 +72,11 @@ int main(void)
     char c;
     while(1)
     {
-        switch(Mode)
+        switch(mode)
         {
             case LOCKED:
-                locked = true
-                c = keyboard_1.getKey();
+                locked = true;
+                c = getKey();
                 if(c == 'A')
                     if(read_code() == code)
                         mode = UNLOCKED;
@@ -86,14 +86,14 @@ int main(void)
                 break;
 
             case UNLOCKED:
-                locked = false
+                locked = false;
                 c = keyboard_1.getKey();
                 if(c == 'A')
                     mode = LOCKED;
                 break;
 
             case ADMIN:
-                c = keyboard_1.getKey();
+                c = getKey();
                 if(c=='A')
                     mode = LOCKED;
                 else if(c == 'B')
