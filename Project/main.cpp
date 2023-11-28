@@ -83,9 +83,11 @@ int main(void)
                     if(read_code() == code)
                         std::cout << "unlocked chest, Press[A] for lock " << std::endl;
                         mode = UNLOCKED;
-                if(c == 'B')
+                else if(c == 'B')
                     if(read_code() == admin)
                         mode = ADMIN;
+                else if(c != -1)
+                    std::cout << "Error, Press[A] for unlock and [B] for admin" << std::endl;
                 break;
 
             case UNLOCKED:
