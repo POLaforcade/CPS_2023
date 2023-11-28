@@ -79,7 +79,6 @@ int main(void)
                 if(c == 'A'){
                     delay(200);
                     int tmp = read_code();
-                    printf("le code a été demande : %04d\n", tmp);
                     if(tmp == code){
                         std::cout << "Valid Code" << std::endl;
                         delay(1000);
