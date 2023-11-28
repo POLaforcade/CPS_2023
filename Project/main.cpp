@@ -75,6 +75,7 @@ int main(void)
         {
             case LOCKED:
                 locked = true;
+                delay(200);
                 c = getKey();
                 if(c == 'A'){
                     printf("Password : ");
