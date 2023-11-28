@@ -117,13 +117,12 @@ int read_code()
     int tmp_key = -1;
     int res = 0;
     State current_state = S0;
-    std::cout<<"Rentrez votre code svp"<<std::endl;
+    std::cout<<"Password : ";
     while(1)
     {
         tmp_key = getKey();
         if(tmp_key != -1)
         {
-            std::cout<<"key ="<<tmp_key << std::endl;
             switch(current_state){
                 case S0:
                     if(tmp_key >= 0 && tmp_key<=9)
