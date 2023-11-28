@@ -121,6 +121,7 @@ int read_code()
     std::cout<<"Rentrez votre code svp"<<std::endl;
     while(1)
     {
+        printf("debut du while");
         key = getKey();
         // std::cout<<"key ="<<key << std::endl;
         if(key != -1)
