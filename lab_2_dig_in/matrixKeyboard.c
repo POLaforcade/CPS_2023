@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 const int ROW[]    = {22, 10, 9, 11};
-const int COLUMN[] = {12, 16, 20, 21};
+const int COLUMN[] = {12, 16, 21, 20};
 
 int getKey(void)
 {
