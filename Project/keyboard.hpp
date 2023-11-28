@@ -179,7 +179,7 @@ int read_code()
                 default:
                     break;
             }
-            delay(1000);
+            delay(400);
         }
     }
 }
