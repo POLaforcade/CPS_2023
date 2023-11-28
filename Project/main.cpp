@@ -81,6 +81,7 @@ int main(void)
                 c = getKey();
                 if(c == 'A')
                     if(read_code() == code)
+                        std::cout << "unlocked chest, Press[A] for lock " << std::endl;
                         mode = UNLOCKED;
                 if(c == 'B')
                     if(read_code() == admin)
