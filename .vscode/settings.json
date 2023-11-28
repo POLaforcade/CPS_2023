@@ -1,7 +1,6 @@
 {
     "files.associations": {
         "*.c": "c",
-        "ostream": "cpp",
         "atomic": "cpp",
         "bit": "cpp",
         "cctype": "cpp",
@@ -30,6 +29,7 @@
         "memory": "cpp",
         "mutex": "cpp",
         "new": "cpp",
+        "ostream": "cpp",
         "ratio": "cpp",
         "stdexcept": "cpp",
         "stop_token": "cpp",

@@ -66,7 +66,7 @@ int main(void)
         printf("ISR setup error!\n");
         return -1;
     }
-
+    std::cout << "Welcome in mode ADMIN" << std::endl;
 
     // Control 
     Mode mode = ADMIN;
@@ -94,9 +94,9 @@ int main(void)
                 break;
 
             case ADMIN:
-                std::cout << "Bienvenue en mode ADMIN" << std::endl;
                 c = getKey();
                 if(c=='A')
+                    std::cout << "Locked chest" << std::endl;
                     mode = LOCKED;
                 else if(c == 'B')
                     admin = read_code();
