@@ -63,7 +63,7 @@ int main(void)
         printf("ISR setup error!\n");
         return -1;
     }
-    std::cout << "Welcome in mode ADMIN" << std::endl;
+    std::cout << "Welcome in mode ADMIN" << std::endl << "[A] To lock the chest\n[B] to change admin code\n[C] to change user code" << std::endl;
 
     // Control 
     Mode mode = ADMIN;
@@ -78,6 +78,7 @@ int main(void)
                 c = getKey();
                 if(c == 'A'){
                     delay(200);
+                    printf("Password : ");
                     if(read_code() == code){
                         std::cout << "Valid Code" << std::endl;
                         delay(1000);
@@ -90,8 +91,11 @@ int main(void)
                 }
                 else if(c == 'B'){
                     delay(200);
-                    if(read_code() == admin)
+                    printf("Password : ");
+                    if(read_code() == admin){
+                        std::cout << "Welcome in mode ADMIN" << std::endl << "[A] To lock the chest\n[B] to change admin code\n[C] to change user code" << std::endl;
                         mode = ADMIN;
+                    }
                 }
                 break;
 
@@ -113,12 +117,14 @@ int main(void)
                 else if(c == 'B')
                 {
                     delay(200);
+                    printf("New admin code : ");
                     admin = read_code();
                     std::cout << "Admin Code changed" << std::endl;
                 }
                 else if(c == 'C')
                 {
                     delay(200);
+                    printf("New code : ");
                     code = read_code();
                     std::cout << "Code changed" << std::endl;
                 }
