@@ -76,6 +76,7 @@ int main(void)
             case LOCKED:
                 locked = true;
                 c = getKey();
+                delay(200);
                 if(c == 'A'){
                     int tmp = read_code();
                     printf("le code a été demande : %04d\n", tmp);
@@ -93,12 +94,14 @@ int main(void)
             case UNLOCKED:
                 locked = false;
                 c = getKey();
+                delay(200);
                 if(c == 'A')
                     mode = LOCKED;
                 break;
 
             case ADMIN:
                 c = getKey();
+                delay(200);
                 if(c=='A')
                 {
                     std::cout << "Locked chest, Press[A] for unlock and [B] for admin" << std::endl;
