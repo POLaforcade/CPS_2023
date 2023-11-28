@@ -8,7 +8,6 @@ const int COLUMN[] = {12, 16, 20, 21};
 // Reads a key from the keyboard
 int getKey(void)
 {
-    printf("debut getkey");
 	int i;
 	int tmpRead;
 	int rowVal = -1;

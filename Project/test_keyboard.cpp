@@ -16,9 +16,12 @@ int main(void)
     BGR led_1;
     servomotor servo_1;
 
-    // Control 
-    code = getKey();
-    printf("code rentre = %d\n", code);
+    // Control
+    while(1){
+        code = getKey();
+        if(code != -1)
+            printf("code rentre = %d\n", code);
+    }
 
     return 0;
 }
