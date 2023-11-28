@@ -77,9 +77,9 @@ int main(void)
                 locked = true;
                 delay(200);
                 c = getKey();
+                delay(200);
                 if(c == 'A'){
-                    printf("Password : ");
-                    delay(200);
+                    printf("password : ");
                     if(read_code() == code){
                         std::cout << "Valid Code" << std::endl;
                         delay(1000);
