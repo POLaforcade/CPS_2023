@@ -54,7 +54,7 @@ int main(void)
     servomotor_setup();
 
     // Closes the chest by default
-    servo_1.setAngle(0);
+    setAngle(0);
 
     // setup ISR for button 
     pinMode(PIN_BUTTON, INPUT);
