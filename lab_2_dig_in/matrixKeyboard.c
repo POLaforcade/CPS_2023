@@ -1,8 +1,8 @@
 #include <wiringPi.h>
 #include <stdio.h>
 
-const int ROW[]    = {0, 1, 2, 3};
-const int COLUMN[] = {4, 5, 6, 7};
+const int ROW[]    = {22, 10, 9, 11};
+const int COLUMN[] = {12, 16, 20, 21};
 
 int getKey(void)
 {
@@ -107,7 +107,7 @@ int main(void)
 	int i;
 	int key = -1;
 
-	if(wiringPiSetup() == -1){
+	if(wiringPiSetupGPIO() == -1){
 		printf("setup wiringPi failed !\n");
 		return -1; 
 	}
