@@ -46,6 +46,7 @@ void ISR_button(void)
 
 int main(void)
 {
+    printf("test");
     // Setting up GPIO with wiringPi
     if(wiringPiSetupGpio() == -1){ //when initialize wiring failed,print message to screen
         printf("setup wiringPi failed !\n");
