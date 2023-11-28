@@ -103,7 +103,7 @@ int main(void)
                 locked = false;
                 c = getKey();
                 if(c == 'A')
-                    std::cout << "Locked chest, Press[A] for unlock and [B] for admin" << std::endl;
+                    std::cout << "Locked chest\n[A] to unlock\n[B] to admin" << std::endl;
                     mode = LOCKED;
                 break;
 
@@ -111,7 +111,7 @@ int main(void)
                 c = getKey();
                 if(c=='A')
                 {
-                    std::cout << "Locked chest, Press[A] for unlock and [B] for admin" << std::endl;
+                    std::cout << "Locked chest\n[A] to unlock\n[B] to admin" << std::endl;
                     mode = LOCKED;
                 }
                 else if(c == 'B')
