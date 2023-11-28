@@ -94,7 +94,7 @@ int main(void)
                 }
                 else if(c != -1)
                 {
-                    std::cout << "Error, Press[A] for unlock and [B] for admin" << std::endl;
+                    std::cout << c; // "Error, Press[A] for unlock and [B] for admin" << std::endl;
                 }
                 break;
 
