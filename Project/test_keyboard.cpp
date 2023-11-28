@@ -9,16 +9,16 @@ bool locked = true;
 
 int main(void)
     {
-    if(wiringPiSetup() == -1) printf("setup wiringPi failed !\n");
+    if(wiringPiSetupGpio() == -1) 
+        printf("setup wiringPi failed !\n");
 
     // Creating all the objects
     BGR led_1;
-    keyboard keyboard_1;
     servomotor servo_1;
 
     // Control 
-    int key = keyboard_1.getKey();
-    printf("key rentre = %d\n", key);
+    code = getKey();
+    printf("code rentre = %d\n", code);
 
     return 0;
 }

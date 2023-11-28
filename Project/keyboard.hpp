@@ -1,104 +1,99 @@
 #include <wiringPi.h>
 #include <iostream>
 
-const int ROW[] = {22, 10, 9, 11};
+const int ROW[]    = {22, 10, 11, 9};
 const int COLUMN[] = {12, 16, 20, 21};
 
-class keyboard
+// Reads a key from the keyboard
+char getKey()
 {
-public:
-    keyboard(){}
+    int tmpRead;
+    int rowVal = -1;
+    int colVal = -1;
+    char keyVal;
 
-    char getKey()
-    {
-        int tmpRead;
-        int rowVal = -1;
-        int colVal = -1;
-        char keyVal;
+    for(int i = 0; i < 4; i++){
+        pinMode(COLUMN[i], OUTPUT);
+        digitalWrite(COLUMN[i], LOW);
+    }
 
-        for(int i = 0; i < 4; i++){
-            pinMode(COLUMN[i], OUTPUT);
-            digitalWrite(COLUMN[i], LOW);
-        }
+    for(int i = 0; i < 4; i++){
+        pinMode(ROW[i], INPUT);
+        pullUpDnControl(ROW[i], PUD_UP);
+    }
 
-        for(int i = 0; i < 4; i++){
-            pinMode(ROW[i], INPUT);
-            pullUpDnControl(ROW[i], PUD_UP);
+    for(int i = 0; i < 4; i++){
+        tmpRead = digitalRead(ROW[i]);
+        if(tmpRead == 0){
+            rowVal = i;
         }
-
-        for(int i = 0; i < 4; i++){
-            tmpRead = digitalRead(ROW[i]);
-            if(tmpRead == 0){
-                rowVal = i;
-            }
+    }
+    if(rowVal < 0 || rowVal > 3){
+        return -1;
+    }
+    
+    for(int i = 0; i < 4; i++){
+        pinMode(COLUMN[i], INPUT);
+        pullUpDnControl(COLUMN[i], PUD_UP);
+    }
+    pinMode(ROW[rowVal], OUTPUT);
+    digitalWrite(ROW[rowVal], LOW);
+    for(int i = 0; i < 4; i++){
+        tmpRead = digitalRead(COLUMN[i]);
+        if(tmpRead == 0){
+            colVal = i;
         }
-        if(rowVal < 0 || rowVal > 3){
-            return -1;
-        }
-        
-        for(int i = 0; i < 4; i++){
-            pinMode(COLUMN[i], INPUT);
-            pullUpDnControl(COLUMN[i], PUD_UP);
-        }
-        pinMode(ROW[rowVal], OUTPUT);
-        digitalWrite(ROW[rowVal], LOW);
-        for(int i = 0; i < 4; i++){
-            tmpRead = digitalRead(COLUMN[i]);
-            if(tmpRead == 0){
-                colVal = i;
-            }
-        }
-        if(colVal < 0 || colVal > 3){
-            return -1;
-        }
-        std::cout<<rowVal<<" ; " << colVal <<std::endl;
-        switch(rowVal){
-            case 0:
-            switch(colVal){
-                case 0: keyVal = 1; break;
-                case 1: keyVal = 2; break;
-                case 2: keyVal = 3; break;
-                case 3: keyVal = 'A'; break;
-                default:
-                break;
-            }
-            break;
-            case 1:
-            switch(colVal){
-                case 0: keyVal = 4; break;
-                case 1: keyVal = 5; break;
-                case 2: keyVal = 6; break;
-                case 3: keyVal = 'B'; break;
-                default:
-                break;
-            }
-            break;
-            case 2:
-            switch(colVal){
-                case 0: keyVal = 7; break;
-                case 1: keyVal = 8; break;
-                case 2: keyVal = 9; break;
-                case 3: keyVal = 'C'; break;
-                default:
-                break;
-            }
-            break;
-            case 3:
-            switch(colVal){
-                case 0: keyVal = '*'; break;
-                case 1: keyVal = 0; break;
-                case 2: keyVal = '#'; break;
-                case 3: keyVal = 'D'; break;
-                default:
-                break;
-            }
-            break;
+    }
+    if(colVal < 0 || colVal > 3){
+        return -1;
+    }
+    std::cout<<rowVal<<" ; " << colVal <<std::endl;
+    switch(rowVal){
+        case 0:
+        switch(colVal){
+            case 0: keyVal = 1; break;
+            case 1: keyVal = 2; break;
+            case 2: keyVal = 3; break;
+            case 3: keyVal = 'A'; break;
             default:
             break;
         }
-        return keyVal;
+        break;
+        case 1:
+        switch(colVal){
+            case 0: keyVal = 4; break;
+            case 1: keyVal = 5; break;
+            case 2: keyVal = 6; break;
+            case 3: keyVal = 'B'; break;
+            default:
+            break;
+        }
+        break;
+        case 2:
+        switch(colVal){
+            case 0: keyVal = 7; break;
+            case 1: keyVal = 8; break;
+            case 2: keyVal = 9; break;
+            case 3: keyVal = 'C'; break;
+            default:
+            break;
+        }
+        break;
+        case 3:
+        switch(colVal){
+            case 0: keyVal = '*'; break;
+            case 1: keyVal = 0; break;
+            case 2: keyVal = '#'; break;
+            case 3: keyVal = 'D'; break;
+            default:
+            break;
+        }
+        break;
+        default:
+        break;
     }
-};
+    return keyVal;
+}
 
 typedef enum {
     S0,
@@ -109,7 +104,7 @@ typedef enum {
     INCORRECT
 } State;
 
-int read_code(keyboard &keyboard_1)
+int read_code()
 {
     int key = -1;
     int code = 0;
@@ -118,7 +113,7 @@ int read_code(keyboard &keyboard_1)
 
     while(1)
     {
-        key = keyboard_1.getKey();
+        key = getKey();
         // std::cout<<"key ="<<key << std::endl;
         if(key != -1)
         {
