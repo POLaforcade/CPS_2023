@@ -115,14 +115,14 @@ int main(void)
                     std::cout << "Locked chest\n[A] to unlock\n[B] to admin" << std::endl;
                     mode = LOCKED;
                 }
-                else if(c == 'B')
+                if(c == 'B')
                 {
                     delay(200);
                     printf("New admin code : ");
                     admin = read_code();
                     std::cout << "Admin Code changed" << std::endl;
                 }
-                else if(c == 'C')
+                if(c == 'C')
                 {
                     delay(200);
                     printf("New code : ");
