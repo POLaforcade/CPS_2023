@@ -58,10 +58,10 @@ int getKey(void)
 	switch(rowVal){
 		case 0:
 			switch(colVal){
-				case 0: keyVal = 0; break; 
-				case 1: keyVal = 1; break;
-				case 2: keyVal = 2; break;
-				case 3: keyVal = 3; break;
+				case 0: keyVal = 1; break; 
+				case 1: keyVal = 2; break;
+				case 2: keyVal = 3; break;
+				case 3: keyVal = 'A'; break;
 				default:
 					break;
 			}
@@ -71,27 +71,27 @@ int getKey(void)
 				case 0: keyVal = 4; break;
 				case 1: keyVal = 5; break;
 				case 2: keyVal = 6; break;
-				case 3: keyVal = 7; break;
+				case 3: keyVal = 'B'; break;
 				default:
 					break;
 			}
 			break;
 		case 2:
 			switch(colVal){
-				case 0: keyVal = 8; break;
-				case 1: keyVal = 9; break;
-				case 2: keyVal = 10; break;
-				case 3: keyVal = 11; break;
+				case 0: keyVal = 7; break;
+				case 1: keyVal = 8; break;
+				case 2: keyVal = 9; break;
+				case 3: keyVal = 'C'; break;
 				default:
 					break;
 			}
 			break;
 		case 3:
 			switch(colVal){
-				case 0: keyVal = 12; break;
-				case 1: keyVal = 13; break;
-				case 2: keyVal = 14; break;
-				case 3: keyVal = 15; break;
+				case 0: keyVal = '*'; break;
+				case 1: keyVal = 0; break;
+				case 2: keyVal = '#'; break;
+				case 3: keyVal = 'D'; break;
 				default:
 					break;
 				
