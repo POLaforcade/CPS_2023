@@ -1,8 +1,8 @@
 #include <wiringPi.h>
 #include <stdio.h>
 
-const int ROW[]    = {22, 10, 9, 11};
-const int COLUMN[] = {12, 16, 21, 20};
+const int ROW[]    = {22, 10, 11, 9};
+const int COLUMN[] = {12, 16, 20, 21};
 
 int getKey(void)
 {
