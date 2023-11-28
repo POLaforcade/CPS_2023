@@ -115,22 +115,21 @@ typedef enum {
 
 int read_code()
 {
-    int key = -1;
-    int code = 0;
+    int tmp_key = -1;
+    int res = 0;
     State current_state = S0;
     std::cout<<"Rentrez votre code svp"<<std::endl;
     while(1)
     {
-        printf("debut du while");
-        key = getKey();
+        tmp_key = getKey();
         // std::cout<<"key ="<<key << std::endl;
-        if(key != -1)
+        if(tmp_key != -1)
         {
             switch(current_state){
                 case S0:
-                    if(key >= 0 && key<=9)
+                    if(tmp_key >= 0 && tmp_key<=9)
                     {
-                        code += key*1000;
+                        res += tmp_key*1000;
                         current_state = KEY1;
                         printf("*");
                     }
@@ -139,9 +138,9 @@ int read_code()
                     }
                     break;
                 case KEY1:
-                    if(key >= 0 && key<=9)
+                    if(tmp_key >= 0 && tmp_key<=9)
                     {
-                        code += key*100;
+                        res += tmp_key*100;
                         current_state = KEY2;
                         printf("*");
                     }
@@ -150,9 +149,9 @@ int read_code()
                     }
                     break;
                 case KEY2:
-                    if(key >= 0 && key<=9)
+                    if(tmp_key >= 0 && tmp_key<=9)
                     {
-                        code += 10*key;
+                        res += 10*tmp_key;
                         current_state = KEY3;
                         printf("*");
                     }
@@ -161,9 +160,9 @@ int read_code()
                     }
                     break;
                 case KEY3:
-                    if(key >= 0 && key<=9)
+                    if(tmp_key >= 0 && tmp_key<=9)
                     {
-                        code += key;
+                        res += tmp_key;
                         current_state = KEY4;
                         printf("*");
                     }
@@ -172,8 +171,8 @@ int read_code()
                     }
                     break;
                 case KEY4:
-                    if(key == '#'){
-                        return code;
+                    if(tmp_key == '#'){
+                        return res;
                     }
                     else
                         current_state = INCORRECT; 
