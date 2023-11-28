@@ -107,13 +107,13 @@ int main(void)
                 }
                 else if(c == 'B')
                 {
-                    std::cout << "Code changed" << std::endl;
                     admin = read_code();
+                    std::cout << "Admin Code changed" << std::endl;
                 }
                 else if(c == 'C')
                 {
                     code = read_code();
-                    std::cout << "Admin Code changed" << std::endl;
+                    std::cout << "Code changed" << std::endl;
                 }
                 break;
 

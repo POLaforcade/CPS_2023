@@ -122,9 +122,9 @@ int read_code()
     while(1)
     {
         tmp_key = getKey();
-        // std::cout<<"key ="<<key << std::endl;
         if(tmp_key != -1)
         {
+            std::cout<<"key ="<<key << std::endl;
             switch(current_state){
                 case S0:
                     if(tmp_key >= 0 && tmp_key<=9)
