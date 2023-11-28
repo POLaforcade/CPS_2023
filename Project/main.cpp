@@ -100,6 +100,7 @@ int main(void)
                 locked = false;
                 c = getKey();
                 if(c == 'A')
+                    std::cout << "Locked chest, Press[A] for unlock and [B] for admin" << std::endl;
                     mode = LOCKED;
                 break;
 
