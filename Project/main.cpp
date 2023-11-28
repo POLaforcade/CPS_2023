@@ -102,9 +102,15 @@ int main(void)
                     mode = LOCKED;
                 }
                 else if(c == 'B')
+                {
+                    std::cout << "Code changed" << std::endl;
                     admin = read_code();
+                }
                 else if(c == 'C')
+                {
                     code = read_code();
+                    std::cout << "Admin Code changed" << std::endl;
+                }
                 break;
 
             default:
