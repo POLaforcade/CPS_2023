@@ -171,7 +171,9 @@ int read_code()
                     }
                     break;
                 case KEY4:
-                    return code;
+                    if(key == '#'){
+                        return code;
+                    }
                     break;
                 case INCORRECT:
                     return -1;
