@@ -87,7 +87,7 @@ int main(void)
 
             case UNLOCKED:
                 locked = false;
-                c = keyboard_1.getKey();
+                c = getKey();
                 if(c == 'A')
                     mode = LOCKED;
                 break;
