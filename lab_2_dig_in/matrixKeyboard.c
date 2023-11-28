@@ -107,7 +107,7 @@ int main(void)
 	int i;
 	int key = -1;
 
-	if(wiringPiSetupGPIO() == -1){
+	if(wiringPiSetupGpio() == -1){
 		printf("setup wiringPi failed !\n");
 		return -1; 
 	}
