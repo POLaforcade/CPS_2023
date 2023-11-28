@@ -174,6 +174,8 @@ int read_code()
                     if(key == '#'){
                         return code;
                     }
+                    else
+                        state = INCORRECT; 
                     break;
                 case INCORRECT:
                     return -1;
