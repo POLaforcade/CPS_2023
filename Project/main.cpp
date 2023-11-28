@@ -79,22 +79,15 @@ int main(void)
             case LOCKED:
                 locked = true;
                 c = getKey();
-                if(c == 'A')
-                {
-                    if(read_code() == code)
-                    {
+                if(c == 'A'){
+                    if(read_code() == code){
                         std::cout << "Valid Code\nUnlocked chest, Press[A] for lock " << std::endl;
                         mode = UNLOCKED;
                     }
                 }
-                else if(c == 'B')
-                {
+                else if(c == 'B'){
                     if(read_code() == admin)
                         mode = ADMIN;
-                }
-                else if(c != -1)
-                {
-                    std::cout << c; // "Error, Press[A] for unlock and [B] for admin" << std::endl;
                 }
                 break;
 
