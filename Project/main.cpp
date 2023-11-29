@@ -82,6 +82,7 @@ int main(void)
                     {
                         std::cout << "Code is correct. Access granted..." << std::endl;
                         std::cout << "Welcome in mode UNLOCKED\n[A] To lock the chest" << std::endl;
+                        led_1.Color(0, 255, 0);
                         mode = UNLOCKED;
                     }
                     else {
@@ -92,6 +93,7 @@ int main(void)
                     std::cout << "Password : " << std::endl;
                     if(read_code() == admin){
                         std::cout << "Welcome in mode ADMIN" << std::endl << "[A] To lock the chest\n[B] to change admin code\n[C] to change user code" << std::endl;
+                        led_1.Color(255, 0, 0);
                         mode = ADMIN;
                     }
                 }
@@ -102,6 +104,7 @@ int main(void)
                 if(c == 'A')
                 {
                     std::cout << "Locked chest\n[A] to unlock\n[B] to admin" << std::endl;
+                    led_1.Color(0, 0, 255);
                     mode = LOCKED;
                 }
                 break;
@@ -111,6 +114,7 @@ int main(void)
                 if(c=='A')
                 {
                     std::cout << "Locked chest\n[A] to unlock\n[B] to admin" << std::endl;
+                    led_1.Color(0, 0, 255);
                     mode = LOCKED;
                 }
                 if(c=='B')
