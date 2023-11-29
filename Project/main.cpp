@@ -115,7 +115,7 @@ int main(void)
                 {
                     std::cout << "New admin code : " << std::endl;
                     admin = read_code();
-                    std:: cout << "Code entred = " << code << std::endl;
+                    std:: cout << "Code entred = " << admin << std::endl;
                 }
                 if(c == 'C')
                 {
