@@ -79,16 +79,18 @@ int main(void)
                 locked = true;
                 if(c == 'A'){
                     std::cout << "Password : " << std::endl;
-                    if(code == read_code()){
+                    if(code == read_code())
+                    {
                         std::cout << "Code is correct. Access granted..." << std::endl;
-                        std::cout << "Welcome in mode UNLOCKED\n[A] To lock the chest lock" << std::endl;
+                        std::cout << "Welcome in mode UNLOCKED\n[A] To lock the chest" << std::endl;
                         mode = UNLOCKED;
+                        printf("%d", mode);
                     }
                     else {
                         std::cout << "Wrong Code" << std::endl;
                     }
                 }
-                else if(c == 'B'){
+                if(c == 'B'){
                     std::cout << "Password : ";
                     if(read_code() == admin){
                         std::cout << "Welcome in mode ADMIN" << std::endl << "[A] To lock the chest\n[B] to change admin code\n[C] to change user code" << std::endl;
