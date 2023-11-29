@@ -109,6 +109,7 @@ int main(void)
                 break;
 
             case ADMIN:
+                locked = false;
                 if(c=='A')
                 {
                     std::cout << "Locked chest\n[A] to unlock\n[B] to admin" << std::endl;
