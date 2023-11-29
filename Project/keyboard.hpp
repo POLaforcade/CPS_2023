@@ -53,7 +53,7 @@ int getKey(void)
 	if(colVal < 0 || colVal > 3){
 		return -1;
 	}
-	
+
 	switch(rowVal){
 		case 0:
 			switch(colVal){
@@ -118,7 +118,6 @@ int read_code()
     State current_state = S0;
     while(1)
     {
-		delay(200);
         tmp_key = getKey();
         if(tmp_key != -1)
         {

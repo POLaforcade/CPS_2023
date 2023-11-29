@@ -116,15 +116,13 @@ int main(void)
                 {
                     std::cout << "New admin code : " << std::endl;
                     admin = read_code();
-                    std:: cout << "code rentre = " << code << std::endl;
-                    std::cout << "Admin Code changed" << std::endl;
+                    std:: cout << "Code entred = " << code << std::endl;
                 }
                 if(c == 'C')
                 {
                     std::cout << "New code : " << std::endl;
                     code = read_code();
-                    std:: cout << "code rentre = " << code << std::endl;
-                    std::cout << "Code changed" << std::endl;
+                    std:: cout << "Code entred = " << code << std::endl;
                 }
                 break;
 
