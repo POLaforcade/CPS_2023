@@ -115,13 +115,13 @@ int main(void)
                 {
                     std::cout << "New admin code : " << std::endl;
                     admin = read_code();
-                    std:: cout << "Code entred = " << admin << std::endl;
+                    std:: cout << std::setw(4) << std::setfill('0') << "Code entred = " << admin << std::endl;
                 }
                 if(c == 'C')
                 {
                     std::cout << "New code : " << std::endl;
                     code = read_code();
-                    std:: cout << "Code entred = " << code << std::endl;
+                    std:: cout << std::setw(4) << std::setfill('0') << "Code entred = " << code << std::endl;
                 }
                 break;
 
