@@ -68,8 +68,6 @@ int main(void)
     // Control 
     Mode mode = ADMIN;
     char c;
-    code = read_code();
-    printf("code rentre = %04d\n", code);
     while(1)
     {
         c = getKey();
@@ -82,7 +80,6 @@ int main(void)
                     std::cout << "Password : ";
                     if(code == read_code()){
                         std::cout << "Code is correct. Access granted..." << std::endl;
-                        delay(1000);
                         std::cout << "Welcome in mode UNLOCKED\n[A] To lock the chest lock" << std::endl;
                         mode = UNLOCKED;
                     }
