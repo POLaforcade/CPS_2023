@@ -75,7 +75,6 @@ int main(void)
         {
             case LOCKED:
                 locked = true;
-                delay(200);
                 c = getKey();
                 if(c == 'A'){
                     printf("password : ");
@@ -91,7 +90,6 @@ int main(void)
                 }
                 else if(c == 'B'){
                     printf("Password : ");
-                    delay(200);
                     if(read_code() == admin){
                         std::cout << "Welcome in mode ADMIN" << std::endl << "[A] To lock the chest\n[B] to change admin code\n[C] to change user code" << std::endl;
                         mode = ADMIN;
@@ -134,6 +132,7 @@ int main(void)
                 mode = ADMIN;
                 break;
         }
+        delay(200);
     }
 
     return 0;
