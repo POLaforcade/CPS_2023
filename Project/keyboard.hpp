@@ -119,7 +119,6 @@ int read_code()
     State current_state = S0;
     while(1)
     {
-        sleep(1);
         tmp_key = getKey();
         if(tmp_key != -1)
         {
@@ -181,6 +180,8 @@ int read_code()
                 default:
                     break;
             }
+			// Wait for the keyboard to go back at its normal state
+			delay(200);
         }
     }
 }

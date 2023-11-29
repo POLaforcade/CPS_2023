@@ -70,20 +70,18 @@ int main(void)
     char c;
     while(1)
     {
-        c = -1;
         switch(mode)
         {
             case LOCKED:
                 locked = true;
                 delay(200);
                 c = getKey();
-                delay(200);
                 if(c == 'A'){
                     printf("password : ");
-                    if(read_code() == code){
-                        std::cout << "Valid Code" << std::endl;
+                    if(code == read_code()){
+                        std::cout << "Code is correct. Access granted..." << std::endl;
                         delay(1000);
-                        std::cout << "Unlocked chest, Press[A] for lock " << std::endl;
+                        std::cout << "Welcome in mode UNLOCKED\n[A] To lock the chest lock" << std::endl;
                         mode = UNLOCKED;
                     }
                     else {
@@ -110,21 +108,22 @@ int main(void)
 
             case ADMIN:
                 c = getKey();
-                if(c=='B')
-                {
-                    std::cout << "New admin code : ";
-                    admin = read_code();
-                    std::cout << "Admin Code changed" << std::endl;
-                }
                 if(c=='A')
                 {
                     std::cout << "Locked chest\n[A] to unlock\n[B] to admin" << std::endl;
                     mode = LOCKED;
                 }
+                if(c=='B')
+                {
+                    std::cout << "New admin code : ";
+                    delay(200);
+                    admin = read_code();
+                    std::cout << "Admin Code changed" << std::endl;
+                }
                 if(c == 'C')
                 {
-                    delay(200);
                     printf("New code : ");
+                    delay(200);
                     code = read_code();
                     std::cout << "Code changed" << std::endl;
                 }
