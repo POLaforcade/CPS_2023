@@ -180,8 +180,6 @@ int read_code()
                 default:
                     break;
             }
-			// Wait for the keyboard to go back at its normal state
-			delay(200);
         }
     }
 }
