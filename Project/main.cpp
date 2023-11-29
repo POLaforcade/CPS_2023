@@ -68,6 +68,8 @@ int main(void)
     // Control 
     Mode mode = ADMIN;
     char c;
+    code = read_code();
+    printf("code rentre = %04d\n", code);
     while(1)
     {
         c = getKey();
