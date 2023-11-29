@@ -70,9 +70,9 @@ int main(void)
     char c;
     while(1)
     {
+        c = -1;
         switch(mode)
         {
-            c = -1;
             case LOCKED:
                 locked = true;
                 delay(200);
