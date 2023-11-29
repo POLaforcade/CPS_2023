@@ -79,7 +79,8 @@ int main(void)
                 if(c == 'A'){
                     std::cout << "Password : ";
                     delay(200);
-                    if(code == read_code()){
+                    int tmp = read_code();
+                    if(code == tmp){
                         std::cout << "Code is correct. Access granted..." << std::endl;
                         std::cout << "Welcome in mode UNLOCKED\n[A] To lock the chest lock" << std::endl;
                         mode = UNLOCKED;
