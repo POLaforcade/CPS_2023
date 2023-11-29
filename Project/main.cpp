@@ -118,6 +118,7 @@ int main(void)
                     std::cout << "New admin code : ";
                     delay(200);
                     admin = read_code();
+                    printf("code rentre = %04d\n", admin);
                     std::cout << "Admin Code changed" << std::endl;
                 }
                 if(c == 'C')
@@ -125,6 +126,7 @@ int main(void)
                     printf("New code : ");
                     delay(200);
                     code = read_code();
+                    printf("code rentre = %04d\n", code);
                     std::cout << "Code changed" << std::endl;
                 }
                 break;
