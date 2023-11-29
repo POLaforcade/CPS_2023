@@ -6,8 +6,8 @@
 
 #define PIN_BUTTON 4
 
-int code = 0000;
-int admin = 0000;
+int code = 1111;
+int admin = 1111;
 bool locked = true;
 bool is_opened = false;
 
