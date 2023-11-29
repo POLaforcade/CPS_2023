@@ -53,8 +53,7 @@ int getKey(void)
 	if(colVal < 0 || colVal > 3){
 		return -1;
 	}
-
-	//printf("%d, %d\n", rowVal, colVal);
+	
 	switch(rowVal){
 		case 0:
 			switch(colVal){
@@ -129,7 +128,7 @@ int read_code()
                     {
                         res += tmp_key*1000;
                         current_state = KEY1;
-                        printf("*");
+                        std::cout << "*";
                     }
                     else{
                         current_state = INCORRECT;
@@ -140,7 +139,7 @@ int read_code()
                     {
                         res += tmp_key*100;
                         current_state = KEY2;
-                        printf("*");
+                        std::cout << "*";
                     }
                     else{
                         current_state = INCORRECT;
@@ -151,7 +150,7 @@ int read_code()
                     {
                         res += 10*tmp_key;
                         current_state = KEY3;
-                        printf("*");
+                        std::cout << "*";
                     }
                     else{
                         current_state = INCORRECT;
@@ -162,7 +161,7 @@ int read_code()
                     {
                         res += tmp_key;
                         current_state = KEY4;
-                        printf("*");
+                        std::cout << "*";
                     }
                     else{
                         current_state = INCORRECT;

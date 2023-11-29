@@ -23,7 +23,7 @@ void ISR_button(void)
     delay(10);
     // Make sure the button is pressed 1 time 
     if (digitalRead(PIN_BUTTON) == 0){
-        printf("Button Pressed detected using ISR\n");
+        std::cout << "Button Pressed detected using ISR" << std::endl;
         // Decides if we should open/close the chest or not
         if(locked == false && is_opened == false)
         {
@@ -45,7 +45,7 @@ int main(void)
 {
     // Setting up GPIO with wiringPi
     if(wiringPiSetupGpio() == -1){ //when initialize wiring failed,print message to screen
-        printf("setup wiringPi failed !\n");
+        std::cout << "setup wiringPi failed !" << std::endl;
         return -1;
     }
 
@@ -60,7 +60,7 @@ int main(void)
     pullUpDnControl(PIN_BUTTON, PUD_DOWN);
     
     if(wiringPiISR(PIN_BUTTON, INT_EDGE_FALLING, ISR_button) < 0){
-        printf("ISR setup error!\n");
+        std::cout << "ISR setup error!" << std::endl;
         return -1;
     }
     std::cout << "Welcome in mode ADMIN" << std::endl << "[A] To lock the chest\n[B] to change admin code\n[C] to change user code" << std::endl;
@@ -77,7 +77,7 @@ int main(void)
                 locked = true;
                 c = getKey();
                 if(c == 'A'){
-                    printf("password : ");
+                    std::cout << "Password : ";
                     if(code == read_code()){
                         std::cout << "Code is correct. Access granted..." << std::endl;
                         delay(1000);
@@ -89,7 +89,7 @@ int main(void)
                     }
                 }
                 else if(c == 'B'){
-                    printf("Password : ");
+                    std::cout << "Password : ";
                     if(read_code() == admin){
                         std::cout << "Welcome in mode ADMIN" << std::endl << "[A] To lock the chest\n[B] to change admin code\n[C] to change user code" << std::endl;
                         mode = ADMIN;
@@ -106,7 +106,6 @@ int main(void)
                 break;
 
             case ADMIN:
-                printf("***\n");
                 c = getKey();
                 if(c=='A')
                 {
@@ -117,14 +116,14 @@ int main(void)
                 {
                     std::cout << "New admin code : " << std::endl;
                     admin = read_code();
-                    printf("code rentre = %04d\n", admin);
+                    std:: cout << "code rentre = " << code << std::endl;
                     std::cout << "Admin Code changed" << std::endl;
                 }
                 if(c == 'C')
                 {
-                    printf("New code : ");
+                    std::cout << "New code : " << std::endl;
                     code = read_code();
-                    printf("code rentre = %04d\n", code);
+                    std:: cout << "code rentre = " << code << std::endl;
                     std::cout << "Code changed" << std::endl;
                 }
                 break;
