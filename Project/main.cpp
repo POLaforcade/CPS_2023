@@ -116,8 +116,8 @@ int main(void)
                 if(c=='B')
                 {
                     std::cout << "New admin code : ";
-                    admin = read_code();
-                    printf("code rentre = %04d\n", admin);
+                    //admin = read_code();
+                    printf("cod e rentre = %04d\n", admin);
                     std::cout << "Admin Code changed" << std::endl;
                 }
                 if(c == 'C')
