@@ -180,5 +180,6 @@ int read_code()
                     break;
             }
         }
+		delay(200);
     }
 }
