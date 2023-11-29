@@ -75,6 +75,7 @@ int main(void)
         switch(mode)
         {
             case LOCKED:
+                printf("***\n");
                 locked = true;
                 if(c == 'A'){
                     std::cout << "Password : " << std::endl;
