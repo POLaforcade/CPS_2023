@@ -70,12 +70,12 @@ int main(void)
     char c;
     while(1)
     {
-        c = -1;
+        c = getKey();
+        delay(200);
         switch(mode)
         {
             case LOCKED:
                 locked = true;
-                c = getKey();
                 if(c == 'A'){
                     std::cout << "Password : ";
                     if(code == read_code()){
@@ -99,14 +99,12 @@ int main(void)
 
             case UNLOCKED:
                 locked = false;
-                c = getKey();
                 if(c == 'A')
                     std::cout << "Locked chest\n[A] to unlock\n[B] to admin" << std::endl;
                     mode = LOCKED;
                 break;
 
             case ADMIN:
-                c = getKey();
                 if(c=='A')
                 {
                     std::cout << "Locked chest\n[A] to unlock\n[B] to admin" << std::endl;
@@ -130,7 +128,6 @@ int main(void)
                 mode = ADMIN;
                 break;
         }
-        delay(200);
     }
 
     return 0;
