@@ -72,6 +72,7 @@ int main(void)
     {
         c = getKey();
         delay(200);
+        printf("%d", mode);
         switch(mode)
         {
             case LOCKED:
@@ -84,7 +85,6 @@ int main(void)
                         std::cout << "Code is correct. Access granted..." << std::endl;
                         std::cout << "Welcome in mode UNLOCKED\n[A] To lock the chest" << std::endl;
                         mode = UNLOCKED;
-                        printf("%d", mode);
                     }
                     else {
                         std::cout << "Wrong Code" << std::endl;
