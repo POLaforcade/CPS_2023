@@ -106,7 +106,7 @@ int main(void)
                 break;
 
             case ADMIN:
-            printf("***\n");
+                printf("***\n");
                 c = getKey();
                 if(c=='A')
                 {
@@ -115,7 +115,7 @@ int main(void)
                 }
                 if(c=='B')
                 {
-                    std::cout << "New admin code : ";
+                    std::cout << "New admin code : " << std::endl;
                     admin = read_code();
                     printf("code rentre = %04d\n", admin);
                     std::cout << "Admin Code changed" << std::endl;
