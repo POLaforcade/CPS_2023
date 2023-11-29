@@ -106,6 +106,7 @@ int main(void)
                 break;
 
             case ADMIN:
+            printf("***\n");
                 c = getKey();
                 if(c=='A')
                 {
