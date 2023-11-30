@@ -38,7 +38,7 @@ void ISR_button(void)
             setAngle(0);
             is_opened = false;
         }
-        delay(50);
+        delay(100);
     }
 }
 
