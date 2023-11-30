@@ -26,8 +26,8 @@ void setAngle(int angle) {
     } else if (angle > 180) {
         angle = 180;
     }
-
     int pwmValue = map(angle, 0, 180, SERVO_MIN_PWM, SERVO_MAX_PWM);
+    std::cout << "angle = " << angle << " ,PWM value = " << pwmValue << std::endl;
     pwmWrite(SERVO_PIN, pwmValue);
 }
 
