@@ -66,6 +66,7 @@ int main(void)
         return -1;
     }
     std::cout << "Welcome in mode ADMIN" << std::endl << "[A] To lock the chest\n[B] to change admin code\n[C] to change user code" << std::endl;
+    led_1.Color(255, 0, 0);
 
     // Control 
     Mode mode = ADMIN;
