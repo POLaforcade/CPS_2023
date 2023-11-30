@@ -28,12 +28,14 @@ void ISR_button(void)
         if(locked == false && is_opened == false)
         {
             // Opens the chest
+            std::cout << "Opening the chest" << std::endl;
             setAngle(180);
             is_opened = true;
         }
         else
         {
             // Closes the chest
+            std::cout << "Closing the chest" << std::endl;
             setAngle(0);
             is_opened = false;
         }
