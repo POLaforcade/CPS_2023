@@ -25,6 +25,7 @@ void ISR_button(void)
     if (digitalRead(PIN_BUTTON) == 0){
         std::cout << "Button Pressed detected using ISR" << std::endl;
         // Decides if we should open/close the chest or not
+        std::cout << locked << is_opened << std::endl;
         if(locked == false && is_opened == false)
         {
             // Opens the chest
