@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <cstdlib>
 
 #include "keyboard.hpp"
 #include "bgr.hpp"
@@ -10,6 +11,11 @@ int code = 1111;
 int admin = 1111;
 bool locked = true;
 bool is_opened = false;
+
+
+void clear() {
+    system("clear");
+}
 
 typedef enum
 {
@@ -105,6 +111,7 @@ int main(void)
                 locked = false;
                 if(c == 'A')
                 {
+                    clear();
                     std::cout << "Locked chest\n[A] to unlock\n[B] to admin" << std::endl;
                     led_1.Color(0, 0, 255);
                     mode = LOCKED;
@@ -115,6 +122,7 @@ int main(void)
                 locked = false;
                 if(c=='A')
                 {
+                    clear();
                     std::cout << "Locked chest\n[A] to unlock\n[B] to admin" << std::endl;
                     led_1.Color(0, 0, 255);
                     mode = LOCKED;
