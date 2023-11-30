@@ -79,7 +79,7 @@ int main(void)
     while(1)
     {
         c = getKey();
-        delay(200);
+        delay(300);
         switch(mode)
         {
             case LOCKED:
