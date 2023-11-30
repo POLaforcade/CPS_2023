@@ -7,7 +7,7 @@
 #define SERVO_PIN 18
 
 const int SERVO_MIN_PWM = 100;
-const int SERVO_MAX_PWM = 300;
+const int SERVO_MAX_PWM = 200;
 
 int map(int alpha, int alpha_min, int alpha_max, int pulse_min, int pulse_max) {
     return (((pulse_max-pulse_min)*(alpha-alpha_min))/(alpha_max-alpha_min))+pulse_min;
